@@ -2,65 +2,103 @@ import torch
 from transformers import AutoImageProcessor, AutoModel
 from PIL import Image
 
+from .base import FoundationModel
+
 
 MODEL_NAME = "facebook/dinov2-base"
 
 
-def load_model():
-    processor = AutoImageProcessor.from_pretrained(MODEL_NAME)
-    model = AutoModel.from_pretrained(MODEL_NAME)
+class DINOv2(FoundationModel):
 
-    model.eval()
+    def __init__(self, model_name=MODEL_NAME):
+        self.model_name = model_name
+        self.processor = None
+        self.model = None
 
-    return processor, model
+    def load(self):
+        self.processor = AutoImageProcessor.from_pretrained(
+            self.model_name
+        )
 
+        self.model = AutoModel.from_pretrained(
+            self.model_name
+        )
 
-def extract_patch_features(image):
-    processor, model = load_model()
+        self.model.eval()
 
-    inputs = processor(images=image, return_tensors="pt")
+        return self
 
-    with torch.no_grad():
-        outputs = model(**inputs)
+    def extract_features(self, images):
+        """
+        Extract spatial patch features from images.
 
-    # Remove the CLS token.
-    patch_tokens = outputs.last_hidden_state[:, 1:, :]
+        Input:
+            images: PIL Image or list of PIL Images
 
-    # DINOv2-base with 224x224 input produces 256 patch tokens.
-    # 256 = 16 x 16.
-    batch_size, num_patches, feature_dim = patch_tokens.shape
+        Output:
+            Tensor of shape:
+            [B, 768, 16, 16]
+        """
 
-    grid_size = int(num_patches ** 0.5)
+        if self.model is None:
+            raise RuntimeError(
+                "Model is not loaded. Call load() first."
+            )
 
-    # Convert:
-    # [B, 256, 768]
-    #
-    # into:
-    # [B, 768, 16, 16]
+        inputs = self.processor(
+            images=images,
+            return_tensors="pt"
+        )
 
-    feature_map = patch_tokens.reshape(
-        batch_size,
-        grid_size,
-        grid_size,
-        feature_dim
-    )
+        with torch.no_grad():
+            outputs = self.model(**inputs)
 
-    feature_map = feature_map.permute(0, 3, 1, 2)
+        # Remove CLS token.
+        patch_tokens = outputs.last_hidden_state[:, 1:, :]
 
-    return feature_map
+        batch_size, num_patches, feature_dim = patch_tokens.shape
+
+        grid_size = int(num_patches ** 0.5)
+
+        # [B, N, C]
+        #      ↓
+        # [B, H, W, C]
+        feature_map = patch_tokens.reshape(
+            batch_size,
+            grid_size,
+            grid_size,
+            feature_dim
+        )
+
+        # [B, H, W, C]
+        #      ↓
+        # [B, C, H, W]
+        feature_map = feature_map.permute(
+            0, 3, 1, 2
+        )
+
+        return feature_map
 
 
 if __name__ == "__main__":
 
-    print("=== DINOv2 Spatial Feature Test ===")
+    print("=== AnomalyVFM+ DINOv2 Module Test ===")
 
-    image = Image.new("RGB", (224, 224), "white")
+    image = Image.new(
+        "RGB",
+        (224, 224),
+        "white"
+    )
 
-    feature_map = extract_patch_features(image)
+    model = DINOv2()
 
-    print("Feature map shape:", feature_map.shape)
+    print("Loading DINOv2...")
+    model.load()
 
-    print("Expected format:")
-    print("[Batch, Channels, Height, Width]")
+    print("Model loaded.")
 
-    print("DINOv2 spatial feature test: SUCCESS")
+    features = model.extract_features(image)
+
+    print("Feature shape:", features.shape)
+
+    print("DINOv2 module test: SUCCESS")
