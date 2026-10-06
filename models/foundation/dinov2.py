@@ -1,11 +1,11 @@
 import torch
 from transformers import AutoImageProcessor, AutoModel
 from PIL import Image
-
 from .base import FoundationModel
+from configs.loader import load_config
 
-
-MODEL_NAME = "facebook/dinov2-base"
+CONFIG = load_config("configs/baseline.yaml")
+MODEL_NAME = CONFIG["model"]["model_name"]
 
 
 class DINOv2(FoundationModel):
