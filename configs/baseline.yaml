@@ -1,0 +1,21 @@
+# AnomalyVFM+ Baseline Configuration
+
+project:
+  name: "AnomalyVFM+"
+  experiment_id: "EXP-001"
+
+model:
+  name: "dinov2"
+  pretrained: true
+  model_name: "facebook/dinov2-base"
+
+input:
+  image_size: 224
+
+device:
+  type: "auto"
+
+output:
+  feature_channels: 768
+  feature_height: 16
+  feature_width: 16
