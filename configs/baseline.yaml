@@ -9,6 +9,14 @@ model:
   pretrained: true
   model_name: "facebook/dinov2-base"
 
+decoder:
+  input_channels: 768
+  hidden_channels:
+    - 256
+    - 128
+    - 64
+  output_size: 224
+
 input:
   image_size: 224
 
