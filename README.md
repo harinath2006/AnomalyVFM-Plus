@@ -2,127 +2,137 @@
 
 ## Extended Zero-Shot Visual Anomaly Detection using Vision Foundation Models
 
-This project is an experimental implementation and extension of the
-AnomalyVFM research framework presented at CVPR 2026.
+AnomalyVFM+ is an extended implementation inspired by the CVPR 2026 research work **"AnomalyVFM: Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors."**
 
-The project aims to investigate whether Vision Foundation Models can be
-adapted for zero-shot visual anomaly detection and whether additional
-techniques can improve anomaly localization, robustness, and practical
-usability.
+The project investigates how a pretrained Vision Foundation Model can be adapted for visual anomaly detection using parameter-efficient learning while extending the pipeline with:
 
----
+- Multi-scale feature fusion
+- LoRA-based parameter-efficient adaptation
+- Dedicated image-level anomaly prediction
+- Adaptive anomaly scoring
+- Confidence-aware anomaly analysis
+- Automatic threshold calibration
+- Synthetic anomaly generation
+- Pixel-level anomaly localization
+- Explainable anomaly visualization
+- Systematic baseline comparison
+- Controlled ablation experiments
+- Interactive Gradio inference
 
-## Project Goal
+The system is designed for industrial visual inspection, where the objective is to determine whether an input image is **normal or anomalous** and identify the spatial location of the anomaly.
 
-Our system aims to:
-
-1. Study the AnomalyVFM framework.
-2. Reproduce a working baseline.
-3. Build a modular implementation.
-4. Experiment with Vision Foundation Models.
-5. Use parameter-efficient adaptation such as LoRA.
-6. Generate and utilize synthetic anomalies.
-7. Detect anomalies in unseen categories.
-8. Improve anomaly localization and confidence estimation.
-9. Evaluate our approach against the baseline.
+> **Important:** AnomalyVFM+ is an extended implementation inspired by the original AnomalyVFM work. It is not claimed to be an exact reproduction of the complete official training pipeline.
 
 ---
 
-## Planned Pipeline
+# Table of Contents
 
-Input Image
-    ↓
-Vision Foundation Model
-    ↓
-Feature Extraction
-    ↓
-Parameter-Efficient Adaptation
-    ↓
-Feature Fusion
-    ↓
-Anomaly Decoder
-    ↓
-Anomaly Score + Anomaly Map
-    ↓
-Visualization and Evaluation
-
----
-
-## Project Structure
-
-- `models/` - Vision models, adapters, decoder and feature fusion
-- `synthetic/` - Synthetic anomaly generation and filtering
-- `training/` - Training pipeline and loss functions
-- `evaluation/` - Metrics and experiment comparison
-- `inference/` - Prediction and visualization
-- `configs/` - Experiment configurations
-- `experiments/` - Experiment records
-- `demo/` - Final demonstration application
-- `results/` - Generated results, plots and predictions
-- `docs/` - Project documentation
-
----
-
-## Current Status
-
-### Milestone 1 - Environment Setup
-- [x] GitHub repository created
-- [x] VS Code project setup
-- [x] Python virtual environment
-- [x] PyTorch installation
-- [x] CPU environment verified
-
-### Upcoming
-
-- [ ] Official AnomalyVFM baseline
-- [ ] Dataset setup
-- [ ] Foundation model integration
-- [ ] LoRA adaptation
-- [ ] Decoder implementation
-- [ ] Synthetic anomaly pipeline
-- [ ] Proposed improvements
-- [ ] Experiments
-- [ ] Evaluation
-- [ ] Final demo
+- [Project Overview](#project-overview)
+- [Problem Statement](#problem-statement)
+- [Project Objectives](#project-objectives)
+- [Main Features](#main-features)
+- [Key Contributions](#key-contributions)
+- [Model Architecture](#model-architecture)
+- [Overall Processing Pipeline](#overall-processing-pipeline)
+- [Detailed Methodology](#detailed-methodology)
+- [1. Input Processing](#1-input-processing)
+- [2. Vision Foundation Model](#2-vision-foundation-model)
+- [3. LoRA Adaptation](#3-lora-adaptation)
+- [4. Multi-Scale Feature Extraction](#4-multi-scale-feature-extraction)
+- [5. Multi-Scale Feature Fusion](#5-multi-scale-feature-fusion)
+- [6. Anomaly Decoder](#6-anomaly-decoder)
+- [7. Image-Level Anomaly Predictor](#7-image-level-anomaly-predictor)
+- [8. Adaptive Anomaly Scoring](#8-adaptive-anomaly-scoring)
+- [9. Confidence-Aware Refinement](#9-confidence-aware-refinement)
+- [10. Synthetic Anomaly Generation](#10-synthetic-anomaly-generation)
+- [Training Strategy](#training-strategy)
+- [Loss Functions](#loss-functions)
+- [Threshold Calibration](#threshold-calibration)
+- [Inference](#inference)
+- [Dataset](#dataset)
+- [Dataset Structure](#dataset-structure)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Experimental Setup](#experimental-setup)
+- [Experimental Results](#experimental-results)
+- [Baseline Comparison](#baseline-comparison)
+- [Ablation Study](#ablation-study)
+- [Visualization](#visualization)
+- [Interactive Demo](#interactive-demo)
+- [Project Structure](#project-structure)
+- [Module Responsibilities](#module-responsibilities)
+- [Installation](#installation)
+- [Environment Setup](#environment-setup)
+- [Dataset Setup](#dataset-setup)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Inference Usage](#inference-usage)
+- [Visualization Usage](#visualization-usage)
+- [Demo Usage](#demo-usage)
+- [Reproducibility](#reproducibility)
+- [Checkpoint Handling](#checkpoint-handling)
+- [Technical Design](#technical-design)
+- [Experimental Findings](#experimental-findings)
+- [Limitations](#limitations)
+- [Future Improvements](#future-improvements)
+- [References](#references)
+- [Project Status](#project-status)
+- [Conclusion](#conclusion)
 
 ---
 
-## Reproducibility
+# Project Overview
 
-Every major experiment will record:
+Traditional anomaly detection systems often require a large number of labeled anomalous samples.
 
-- Configuration
-- Dataset
-- Model
-- Training parameters
-- Random seed
-- Metrics
-- Checkpoint
-- Result visualizations
+In industrial inspection, defective samples can be:
 
-This allows different team members to reproduce and continue experiments.
+- Rare
+- Expensive to collect
+- Difficult to annotate
+- Highly variable
+- Different across products and manufacturing environments
 
----
+AnomalyVFM+ explores a different approach by using a pretrained **Vision Foundation Model** as the visual representation backbone.
 
-## Team Development
+The system adapts the pretrained model using **LoRA**, extracts information from multiple transformer layers, fuses those representations, and produces both:
 
-The project follows a modular architecture so that different team
-members can independently work on different components.
+1. An image-level anomaly score.
+2. A pixel-level anomaly map.
 
-Each module will define clear:
+The overall idea is:
 
-`INPUT → PROCESS → OUTPUT`
-
-interfaces.
-
----
-
-## Research Reference
-
-AnomalyVFM:
-"Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors"
-
-CVPR 2026.
-
-The official AnomalyVFM implementation is used as a research reference
-and baseline for comparison.
+```text
+                    Input Image
+                         |
+                         v
+                +----------------+
+                |    DINOv2      |
+                | Vision Model   |
+                +-------+--------+
+                        |
+                        v
+                 LoRA Adaptation
+                        |
+             +----------+----------+
+             |                     |
+             v                     v
+      Multi-Scale Features      CLS Token
+             |                     |
+             v                     v
+       Feature Fusion       Image Predictor
+             |                     |
+             v                     v
+       Anomaly Decoder       Image Score
+             |
+             v
+       Anomaly Heatmap
+             |
+             +-----------+
+                         |
+                         v
+                 Threshold Decision
+                         |
+                 +-------+-------+
+                 |               |
+                 v               v
+              NORMAL         ANOMALOUS
