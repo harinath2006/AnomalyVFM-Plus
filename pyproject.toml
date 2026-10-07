@@ -3,3 +3,6 @@ name = "anomalyvfm-plus"
 version = "1.0.0"
 description = "Extended zero-shot visual anomaly detection using vision foundation models"
 requires-python = ">=3.13,<3.14"
+
+[tool.vercel]
+entrypoint = "api.predict:app"
