@@ -1,0 +1,8 @@
+{
+    "model": "AnomalyVFM+",
+    "dataset": "MVTec Bottle",
+    "num_images": 83,
+    "image_auroc": 0.580952380952381,
+    "pixel_auroc": 0.401125779535231,
+    "timestamp": "2026-10-07T20:07:11.685796"
+}

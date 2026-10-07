@@ -1,0 +1,55 @@
+{
+    "dataset": {
+        "name": "MVTec AD",
+        "category": "Bottle",
+        "test_images": 83,
+        "normal_images": 20,
+        "anomalous_images": 63
+    },
+    "final_model": {
+        "name": "AnomalyVFM+",
+        "image_auroc": 0.9595,
+        "pixel_auroc": 0.8627
+    },
+    "baseline": {
+        "name": "DINOv2 Baseline",
+        "image_auroc": 0.4683,
+        "pixel_auroc": 0.8857
+    },
+    "ablations": {
+        "single_scale_lora": {
+            "name": "Single-scale LoRA",
+            "image_auroc": 0.173,
+            "pixel_auroc": 0.5515
+        },
+        "multi_scale": {
+            "name": "Multi-scale Feature Fusion",
+            "image_auroc": 0.9595,
+            "pixel_auroc": 0.8602,
+            "image_improvement": 0.7865,
+            "pixel_improvement": 0.3087,
+            "image_relative_change_percent": 454.59,
+            "pixel_relative_change_percent": 55.98
+        },
+        "adaptive_scoring": {
+            "name": "Adaptive Anomaly Scoring",
+            "maximum_score_auroc": 0.9119,
+            "adaptive_score_auroc": 0.9444,
+            "improvement": 0.0325,
+            "relative_change_percent": 3.57
+        },
+        "confidence_refinement": {
+            "name": "Confidence-aware Refinement",
+            "without_refinement_pixel_auroc": 0.8602,
+            "with_refinement_pixel_auroc": 0.8469,
+            "improvement": -0.0134,
+            "relative_change_percent": -1.56
+        }
+    },
+    "final_vs_baseline": {
+        "image_auroc_difference": 0.4912,
+        "pixel_auroc_difference": -0.023,
+        "image_relative_change_percent": 104.89,
+        "pixel_relative_change_percent": -2.6
+    }
+}

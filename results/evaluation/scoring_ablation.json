@@ -1,0 +1,17 @@
+{
+    "experiment": "Scoring Ablation",
+    "dataset": "MVTec Bottle",
+    "model": "AnomalyVFM+",
+    "max": {
+        "image_auroc": 0.32857142857142857,
+        "pixel_auroc": 0.8309472515268475
+    },
+    "adaptive": {
+        "image_auroc": 0.7682539682539683,
+        "pixel_auroc": 0.8309472515268475
+    },
+    "improvement": {
+        "image_auroc": 0.43968253968253973,
+        "pixel_auroc": 0.0
+    }
+}

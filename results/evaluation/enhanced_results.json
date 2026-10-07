@@ -1,0 +1,17 @@
+{
+    "model": "AnomalyVFM+ Enhanced",
+    "dataset": "MVTec Bottle",
+    "num_images": 83,
+    "threshold": 0.5,
+    "image_auroc": 0.6222222222222222,
+    "pixel_auroc": 0.76281192629109,
+    "accuracy": 0.24096385542168675,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "specificity": 1.0,
+    "true_negative": 20,
+    "false_positive": 0,
+    "false_negative": 63,
+    "true_positive": 0
+}

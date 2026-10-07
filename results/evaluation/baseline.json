@@ -1,0 +1,7 @@
+{
+    "model": "baseline",
+    "dataset": "MVTec Bottle",
+    "num_images": 83,
+    "image_auroc": 0.769047619047619,
+    "pixel_auroc": 0.7720082881233098
+}

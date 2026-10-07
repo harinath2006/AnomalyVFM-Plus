@@ -1,0 +1,27 @@
+experiments:
+
+  baseline:
+    max_steps: 100
+    batch_size: 2
+    learning_rate: 0.0001
+
+  lora:
+    max_steps: 100
+    batch_size: 2
+    learning_rate: 0.0001
+
+  plus:
+    max_steps: 100
+    batch_size: 2
+    learning_rate: 0.0001
+
+
+dataset:
+  name: "MVTec Bottle"
+  root: "data/raw/mvtec"
+  category: "bottle"
+
+
+training:
+  image_size: 224
+  seed: 12

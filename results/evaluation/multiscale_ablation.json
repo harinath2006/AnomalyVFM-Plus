@@ -1,0 +1,25 @@
+{
+    "experiment": "Multi-Scale Feature Ablation",
+    "dataset": "MVTec Bottle",
+    "single_scale": {
+        "layers": [
+            12
+        ],
+        "image_auroc": 0.8865079365079365,
+        "pixel_auroc": 0.7673147858803897
+    },
+    "multi_scale": {
+        "layers": [
+            3,
+            6,
+            9,
+            12
+        ],
+        "image_auroc": 0.7682539682539683,
+        "pixel_auroc": 0.8309472515268475
+    },
+    "improvement": {
+        "image_auroc": -0.11825396825396817,
+        "pixel_auroc": 0.06363246564645775
+    }
+}

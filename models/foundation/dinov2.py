@@ -1,11 +1,11 @@
 import torch
 from transformers import AutoImageProcessor, AutoModel
 from PIL import Image
-from .base import FoundationModel
-from configs.loader import load_config
 
-CONFIG = load_config("configs/baseline.yaml")
-MODEL_NAME = CONFIG["model"]["model_name"]
+from .base import FoundationModel
+
+
+MODEL_NAME = "facebook/dinov2-base"
 
 
 class DINOv2(FoundationModel):
@@ -28,16 +28,21 @@ class DINOv2(FoundationModel):
 
         return self
 
-    def extract_features(self, images):
+    def extract_features(self, images, trainable=False):
         """
-        Extract spatial patch features from images.
+        Extract spatial visual features.
 
-        Input:
-            images: PIL Image or list of PIL Images
+        Args:
+            images:
+                PIL image or list of PIL images.
 
-        Output:
-            Tensor of shape:
-            [B, 768, 16, 16]
+            trainable:
+                False -> inference mode
+                True  -> gradients enabled for LoRA
+
+        Returns:
+            Feature map:
+                [B, C, Hf, Wf]
         """
 
         if self.model is None:
@@ -50,19 +55,21 @@ class DINOv2(FoundationModel):
             return_tensors="pt"
         )
 
-        with torch.no_grad():
+        if trainable:
             outputs = self.model(**inputs)
 
-        # Remove CLS token.
+        else:
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+
+        # Remove CLS token
         patch_tokens = outputs.last_hidden_state[:, 1:, :]
 
         batch_size, num_patches, feature_dim = patch_tokens.shape
 
+        # DINOv2 uses a square patch grid
         grid_size = int(num_patches ** 0.5)
 
-        # [B, N, C]
-        #      ↓
-        # [B, H, W, C]
         feature_map = patch_tokens.reshape(
             batch_size,
             grid_size,
@@ -70,11 +77,12 @@ class DINOv2(FoundationModel):
             feature_dim
         )
 
-        # [B, H, W, C]
-        #      ↓
-        # [B, C, H, W]
+        # [B, H, W, C] -> [B, C, H, W]
         feature_map = feature_map.permute(
-            0, 3, 1, 2
+            0,
+            3,
+            1,
+            2
         )
 
         return feature_map
@@ -93,6 +101,7 @@ if __name__ == "__main__":
     model = DINOv2()
 
     print("Loading DINOv2...")
+
     model.load()
 
     print("Model loaded.")
