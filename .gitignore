@@ -15,3 +15,5 @@ data/raw/
 
 # Generated results
 results/visualizations/
+
+*.zip
