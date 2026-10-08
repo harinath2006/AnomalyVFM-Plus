@@ -2,7 +2,6 @@ import base64
 import io
 import os
 import urllib.request
-import zipfile
 from pathlib import Path
 
 import torch
@@ -14,7 +13,6 @@ from fastapi.responses import FileResponse
 from PIL import Image
 
 from models.anomaly_vfm_plus import AnomalyVFMPlus
-from inference.threshold import load_threshold
 
 
 # ============================================================
@@ -28,12 +26,16 @@ CHECKPOINT_PATH = MODEL_DIR / "checkpoint.pt"
 
 CHECKPOINT_URL = os.getenv(
     "ANOMALYVFM_CHECKPOINT_URL",
-    "https://github.com/harinath2006/AnomalyVFM-Plus/releases/download/v1.0.0/checkpoint.zip"
+    "https://github.com/harinath2006/AnomalyVFM-Plus/releases/download/v1.0.0/checkpoint.pt"
 )
 
 DEVICE = torch.device("cpu")
 
 MAX_OUTPUT_SIZE = 512
+
+# Calibrated using MVTec Bottle validation split.
+# Can be overridden on Vercel with ANOMALY_THRESHOLD.
+DEFAULT_THRESHOLD = 0.081440
 
 
 # ============================================================
@@ -61,11 +63,12 @@ _threshold = None
 
 def ensure_checkpoint():
     """
-    Download and extract the trained checkpoint if it does not
+    Download the trained .pt checkpoint directly if it does not
     already exist in the temporary Vercel filesystem.
     """
 
     if CHECKPOINT_PATH.exists():
+        print(f"Checkpoint already exists: {CHECKPOINT_PATH}")
         return CHECKPOINT_PATH
 
     MODEL_DIR.mkdir(
@@ -73,14 +76,13 @@ def ensure_checkpoint():
         exist_ok=True
     )
 
-    zip_path = MODEL_DIR / "checkpoint.zip"
-
     print("Downloading AnomalyVFM+ checkpoint...")
+    print(f"Source: {CHECKPOINT_URL}")
 
     try:
         urllib.request.urlretrieve(
             CHECKPOINT_URL,
-            zip_path
+            CHECKPOINT_PATH
         )
     except Exception as error:
         raise RuntimeError(
@@ -88,43 +90,52 @@ def ensure_checkpoint():
         )
 
     print("Checkpoint downloaded.")
-
-    print("Extracting checkpoint...")
-
-    try:
-        with zipfile.ZipFile(zip_path, "r") as archive:
-            archive.extractall(MODEL_DIR)
-    except Exception as error:
-        raise RuntimeError(
-            f"Failed to extract checkpoint: {error}"
-        )
-
-    # --------------------------------------------------------
-    # Search for checkpoint.pt
-    # --------------------------------------------------------
+    print(f"Checkpoint ready: {CHECKPOINT_PATH}")
 
     if not CHECKPOINT_PATH.exists():
-
-        possible_checkpoints = list(
-            MODEL_DIR.rglob("checkpoint.pt")
+        raise FileNotFoundError(
+            "checkpoint.pt was not found after download."
         )
-
-        if not possible_checkpoints:
-            raise FileNotFoundError(
-                "checkpoint.pt was not found after extraction."
-            )
-
-        source_checkpoint = possible_checkpoints[0]
-
-        source_checkpoint.replace(
-            CHECKPOINT_PATH
-        )
-
-    print(
-        f"Checkpoint ready: {CHECKPOINT_PATH}"
-    )
 
     return CHECKPOINT_PATH
+
+
+# ============================================================
+# THRESHOLD
+# ============================================================
+
+def load_decision_threshold():
+    """
+    Load the calibrated anomaly decision threshold.
+
+    Vercel:
+        Uses ANOMALY_THRESHOLD environment variable if provided.
+
+    Local/default:
+        Uses the calibrated threshold from the MVTec Bottle experiment.
+    """
+
+    threshold_value = os.getenv("ANOMALY_THRESHOLD")
+
+    if threshold_value is not None:
+        try:
+            threshold = float(threshold_value)
+            print(
+                f"Using threshold from environment: {threshold:.6f}"
+            )
+            return threshold
+        except ValueError:
+            print(
+                "Invalid ANOMALY_THRESHOLD environment variable. "
+                "Using default threshold."
+            )
+
+    print(
+        f"Using calibrated default threshold: "
+        f"{DEFAULT_THRESHOLD:.6f}"
+    )
+
+    return DEFAULT_THRESHOLD
 
 
 # ============================================================
@@ -136,14 +147,29 @@ def load_model():
     global _model
     global _threshold
 
+    # Reuse model between warm Vercel invocations.
     if _model is not None:
         return _model, _threshold
+
+    # --------------------------------------------------------
+    # Download checkpoint
+    # --------------------------------------------------------
 
     checkpoint_path = ensure_checkpoint()
 
     print("Loading AnomalyVFM+ model...")
 
+    # --------------------------------------------------------
+    # Create model architecture
+    # --------------------------------------------------------
+
     model = AnomalyVFMPlus()
+
+    # --------------------------------------------------------
+    # Load trained checkpoint
+    # --------------------------------------------------------
+
+    print("Loading checkpoint weights...")
 
     checkpoint = torch.load(
         checkpoint_path,
@@ -155,20 +181,21 @@ def load_model():
     # Support different checkpoint formats
     # --------------------------------------------------------
 
-    if "model_state_dict" in checkpoint:
+    if isinstance(checkpoint, dict):
 
-        state_dict = checkpoint["model_state_dict"]
+        if "model_state_dict" in checkpoint:
+            state_dict = checkpoint["model_state_dict"]
 
-    elif "state_dict" in checkpoint:
+        elif "state_dict" in checkpoint:
+            state_dict = checkpoint["state_dict"]
 
-        state_dict = checkpoint["state_dict"]
+        elif "model" in checkpoint:
+            state_dict = checkpoint["model"]
 
-    elif "model" in checkpoint:
-
-        state_dict = checkpoint["model"]
+        else:
+            state_dict = checkpoint
 
     else:
-
         state_dict = checkpoint
 
     # --------------------------------------------------------
@@ -184,6 +211,10 @@ def load_model():
 
         cleaned_state_dict[key] = value
 
+    # --------------------------------------------------------
+    # Restore trained weights
+    # --------------------------------------------------------
+
     model.load_state_dict(
         cleaned_state_dict,
         strict=True
@@ -196,12 +227,13 @@ def load_model():
     # Load calibrated threshold
     # --------------------------------------------------------
 
-    threshold = load_threshold()
+    threshold = load_decision_threshold()
 
+    # Cache model for warm invocations.
     _model = model
     _threshold = threshold
 
-    print("AnomalyVFM+ model loaded.")
+    print("AnomalyVFM+ model loaded successfully.")
     print(
         f"Decision threshold: {threshold:.6f}"
     )
@@ -283,6 +315,7 @@ async def predict(
     # --------------------------------------------------------
 
     if not file.content_type:
+
         raise HTTPException(
             status_code=400,
             detail="File type could not be determined."
@@ -324,6 +357,8 @@ async def predict(
 
     except Exception as error:
 
+        print(f"Model loading error: {error}")
+
         raise HTTPException(
             status_code=500,
             detail=f"Model loading failed: {error}"
@@ -343,17 +378,19 @@ async def predict(
                 )
             )
 
-            # Image-level anomaly probability
+            # Image-level anomaly probability.
             image_score = torch.sigmoid(
                 image_logit
             )[0].item()
 
-            # Pixel-level anomaly probability
+            # Pixel-level anomaly probability.
             probability_map = torch.sigmoid(
                 anomaly_map
             )
 
     except Exception as error:
+
+        print(f"Inference error: {error}")
 
         raise HTTPException(
             status_code=500,
@@ -367,7 +404,7 @@ async def predict(
     original_width, original_height = image.size
 
     # --------------------------------------------------------
-    # Resize output visualization to maximum 512x512
+    # Resize visualization to maximum 512x512
     # --------------------------------------------------------
 
     scale = min(
