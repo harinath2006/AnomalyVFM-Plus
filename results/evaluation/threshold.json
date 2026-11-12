@@ -1,6 +1,6 @@
 {
-    "threshold": 0.08143968880176544,
-    "calibration_f1": 1.0,
+    "threshold": 0.3117921054363251,
+    "calibration_f1": 0.9523809523809523,
     "calibration_normal_images": 10,
     "calibration_anomaly_images": 10,
     "score_source": "image_predictor"

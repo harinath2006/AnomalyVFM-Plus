@@ -1,0 +1,4911 @@
+{
+  "dataset": "CVC-ClinicDB",
+  "checkpoint": "experiments\\plus\\checkpoint.pt",
+  "evaluation_type": "cross-domain medical image anomaly evaluation",
+  "device": "cpu",
+  "num_images": 612,
+  "image_level_auroc": null,
+  "pixel_level_auroc": 0.7382736488111981,
+  "total_pixels_evaluated": 67682304,
+  "ground_truth_positive_pixels": 6203497,
+  "ground_truth_negative_pixels": 61478807,
+  "warning": "The checkpoint was trained on MVTec Bottle. This experiment evaluates cross-domain generalization on CVC-ClinicDB and does not establish medical diagnostic performance. The anomaly-map sigmoid assumes the decoder outputs logits; verify this against the decoder implementation.",
+  "samples": [
+    {
+      "path": "ds\\img\\1.png",
+      "label": 1,
+      "image_score": 0.7704262137413025,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16978
+    },
+    {
+      "path": "ds\\img\\10.png",
+      "label": 1,
+      "image_score": 0.6737902760505676,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18262
+    },
+    {
+      "path": "ds\\img\\100.png",
+      "label": 1,
+      "image_score": 0.7323099970817566,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7215
+    },
+    {
+      "path": "ds\\img\\101.png",
+      "label": 1,
+      "image_score": 0.6619623303413391,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7827
+    },
+    {
+      "path": "ds\\img\\102.png",
+      "label": 1,
+      "image_score": 0.6620251536369324,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7843
+    },
+    {
+      "path": "ds\\img\\103.png",
+      "label": 1,
+      "image_score": 0.6246010661125183,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9466
+    },
+    {
+      "path": "ds\\img\\104.png",
+      "label": 1,
+      "image_score": 0.4887084364891052,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13263
+    },
+    {
+      "path": "ds\\img\\105.png",
+      "label": 1,
+      "image_score": 0.534909725189209,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16259
+    },
+    {
+      "path": "ds\\img\\106.png",
+      "label": 1,
+      "image_score": 0.7604189515113831,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14437
+    },
+    {
+      "path": "ds\\img\\107.png",
+      "label": 1,
+      "image_score": 0.6672324538230896,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20798
+    },
+    {
+      "path": "ds\\img\\108.png",
+      "label": 1,
+      "image_score": 0.5686042904853821,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19789
+    },
+    {
+      "path": "ds\\img\\109.png",
+      "label": 1,
+      "image_score": 0.8100157976150513,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18187
+    },
+    {
+      "path": "ds\\img\\11.png",
+      "label": 1,
+      "image_score": 0.7615001797676086,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17627
+    },
+    {
+      "path": "ds\\img\\110.png",
+      "label": 1,
+      "image_score": 0.6186727285385132,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25371
+    },
+    {
+      "path": "ds\\img\\111.png",
+      "label": 1,
+      "image_score": 0.7369856238365173,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25628
+    },
+    {
+      "path": "ds\\img\\112.png",
+      "label": 1,
+      "image_score": 0.6494439244270325,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25744
+    },
+    {
+      "path": "ds\\img\\113.png",
+      "label": 1,
+      "image_score": 0.6599514484405518,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25929
+    },
+    {
+      "path": "ds\\img\\114.png",
+      "label": 1,
+      "image_score": 0.8292145729064941,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 27007
+    },
+    {
+      "path": "ds\\img\\115.png",
+      "label": 1,
+      "image_score": 0.8164347410202026,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14861
+    },
+    {
+      "path": "ds\\img\\116.png",
+      "label": 1,
+      "image_score": 0.7198696732521057,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15701
+    },
+    {
+      "path": "ds\\img\\117.png",
+      "label": 1,
+      "image_score": 0.7406081557273865,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13632
+    },
+    {
+      "path": "ds\\img\\118.png",
+      "label": 1,
+      "image_score": 0.83588707447052,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15540
+    },
+    {
+      "path": "ds\\img\\119.png",
+      "label": 1,
+      "image_score": 0.7894967198371887,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12854
+    },
+    {
+      "path": "ds\\img\\12.png",
+      "label": 1,
+      "image_score": 0.7473256587982178,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25551
+    },
+    {
+      "path": "ds\\img\\120.png",
+      "label": 1,
+      "image_score": 0.8220905661582947,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16916
+    },
+    {
+      "path": "ds\\img\\121.png",
+      "label": 1,
+      "image_score": 0.8222363591194153,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17093
+    },
+    {
+      "path": "ds\\img\\122.png",
+      "label": 1,
+      "image_score": 0.8528820276260376,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16859
+    },
+    {
+      "path": "ds\\img\\123.png",
+      "label": 1,
+      "image_score": 0.7689917683601379,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15367
+    },
+    {
+      "path": "ds\\img\\124.png",
+      "label": 1,
+      "image_score": 0.7108219861984253,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16894
+    },
+    {
+      "path": "ds\\img\\125.png",
+      "label": 1,
+      "image_score": 0.702023446559906,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10385
+    },
+    {
+      "path": "ds\\img\\126.png",
+      "label": 1,
+      "image_score": 0.6732603311538696,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10540
+    },
+    {
+      "path": "ds\\img\\127.png",
+      "label": 1,
+      "image_score": 0.7797409892082214,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5122
+    },
+    {
+      "path": "ds\\img\\128.png",
+      "label": 1,
+      "image_score": 0.6681323051452637,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6174
+    },
+    {
+      "path": "ds\\img\\129.png",
+      "label": 1,
+      "image_score": 0.5974663496017456,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7910
+    },
+    {
+      "path": "ds\\img\\13.png",
+      "label": 1,
+      "image_score": 0.7926545739173889,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13995
+    },
+    {
+      "path": "ds\\img\\130.png",
+      "label": 1,
+      "image_score": 0.8260162472724915,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10263
+    },
+    {
+      "path": "ds\\img\\131.png",
+      "label": 1,
+      "image_score": 0.8658249378204346,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10576
+    },
+    {
+      "path": "ds\\img\\132.png",
+      "label": 1,
+      "image_score": 0.8421137928962708,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5361
+    },
+    {
+      "path": "ds\\img\\133.png",
+      "label": 1,
+      "image_score": 0.7701331377029419,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7692
+    },
+    {
+      "path": "ds\\img\\134.png",
+      "label": 1,
+      "image_score": 0.8741581439971924,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7122
+    },
+    {
+      "path": "ds\\img\\135.png",
+      "label": 1,
+      "image_score": 0.7440723776817322,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15832
+    },
+    {
+      "path": "ds\\img\\136.png",
+      "label": 1,
+      "image_score": 0.7276862263679504,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13410
+    },
+    {
+      "path": "ds\\img\\137.png",
+      "label": 1,
+      "image_score": 0.7985439300537109,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11670
+    },
+    {
+      "path": "ds\\img\\138.png",
+      "label": 1,
+      "image_score": 0.7567158341407776,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17963
+    },
+    {
+      "path": "ds\\img\\139.png",
+      "label": 1,
+      "image_score": 0.730138897895813,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20378
+    },
+    {
+      "path": "ds\\img\\14.png",
+      "label": 1,
+      "image_score": 0.7724937200546265,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23199
+    },
+    {
+      "path": "ds\\img\\140.png",
+      "label": 1,
+      "image_score": 0.7250832915306091,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22799
+    },
+    {
+      "path": "ds\\img\\141.png",
+      "label": 1,
+      "image_score": 0.7771227359771729,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 29183
+    },
+    {
+      "path": "ds\\img\\142.png",
+      "label": 1,
+      "image_score": 0.8100647926330566,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 24563
+    },
+    {
+      "path": "ds\\img\\143.png",
+      "label": 1,
+      "image_score": 0.5218381285667419,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4556
+    },
+    {
+      "path": "ds\\img\\144.png",
+      "label": 1,
+      "image_score": 0.6273820996284485,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16500
+    },
+    {
+      "path": "ds\\img\\145.png",
+      "label": 1,
+      "image_score": 0.823595404624939,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22541
+    },
+    {
+      "path": "ds\\img\\146.png",
+      "label": 1,
+      "image_score": 0.8430807590484619,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22442
+    },
+    {
+      "path": "ds\\img\\147.png",
+      "label": 1,
+      "image_score": 0.8488677740097046,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13509
+    },
+    {
+      "path": "ds\\img\\148.png",
+      "label": 1,
+      "image_score": 0.8241357803344727,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9913
+    },
+    {
+      "path": "ds\\img\\149.png",
+      "label": 1,
+      "image_score": 0.8540080785751343,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9192
+    },
+    {
+      "path": "ds\\img\\15.png",
+      "label": 1,
+      "image_score": 0.7202253937721252,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 36223
+    },
+    {
+      "path": "ds\\img\\150.png",
+      "label": 1,
+      "image_score": 0.8071216344833374,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8495
+    },
+    {
+      "path": "ds\\img\\151.png",
+      "label": 1,
+      "image_score": 0.8523730635643005,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6858
+    },
+    {
+      "path": "ds\\img\\152.png",
+      "label": 1,
+      "image_score": 0.8064643740653992,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20696
+    },
+    {
+      "path": "ds\\img\\153.png",
+      "label": 1,
+      "image_score": 0.4918946325778961,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6318
+    },
+    {
+      "path": "ds\\img\\154.png",
+      "label": 1,
+      "image_score": 0.5532833933830261,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 600
+    },
+    {
+      "path": "ds\\img\\155.png",
+      "label": 1,
+      "image_score": 0.5797574520111084,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1680
+    },
+    {
+      "path": "ds\\img\\156.png",
+      "label": 1,
+      "image_score": 0.7384411692619324,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4693
+    },
+    {
+      "path": "ds\\img\\157.png",
+      "label": 1,
+      "image_score": 0.8438798785209656,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7502
+    },
+    {
+      "path": "ds\\img\\158.png",
+      "label": 1,
+      "image_score": 0.7608648538589478,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4493
+    },
+    {
+      "path": "ds\\img\\159.png",
+      "label": 1,
+      "image_score": 0.738134503364563,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1808
+    },
+    {
+      "path": "ds\\img\\16.png",
+      "label": 1,
+      "image_score": 0.8263832330703735,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7893
+    },
+    {
+      "path": "ds\\img\\160.png",
+      "label": 1,
+      "image_score": 0.6404786705970764,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8216
+    },
+    {
+      "path": "ds\\img\\161.png",
+      "label": 1,
+      "image_score": 0.6957371830940247,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3163
+    },
+    {
+      "path": "ds\\img\\162.png",
+      "label": 1,
+      "image_score": 0.7140777707099915,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5105
+    },
+    {
+      "path": "ds\\img\\163.png",
+      "label": 1,
+      "image_score": 0.7773130536079407,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5162
+    },
+    {
+      "path": "ds\\img\\164.png",
+      "label": 1,
+      "image_score": 0.8209423422813416,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3163
+    },
+    {
+      "path": "ds\\img\\165.png",
+      "label": 1,
+      "image_score": 0.7117788195610046,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7347
+    },
+    {
+      "path": "ds\\img\\166.png",
+      "label": 1,
+      "image_score": 0.7675355672836304,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7332
+    },
+    {
+      "path": "ds\\img\\167.png",
+      "label": 1,
+      "image_score": 0.7526633739471436,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3503
+    },
+    {
+      "path": "ds\\img\\168.png",
+      "label": 1,
+      "image_score": 0.7585668563842773,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4955
+    },
+    {
+      "path": "ds\\img\\169.png",
+      "label": 1,
+      "image_score": 0.7623523473739624,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6614
+    },
+    {
+      "path": "ds\\img\\17.png",
+      "label": 1,
+      "image_score": 0.6234890818595886,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14942
+    },
+    {
+      "path": "ds\\img\\170.png",
+      "label": 1,
+      "image_score": 0.7008397579193115,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4667
+    },
+    {
+      "path": "ds\\img\\171.png",
+      "label": 1,
+      "image_score": 0.7852447628974915,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5203
+    },
+    {
+      "path": "ds\\img\\172.png",
+      "label": 1,
+      "image_score": 0.7658814787864685,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3113
+    },
+    {
+      "path": "ds\\img\\173.png",
+      "label": 1,
+      "image_score": 0.7754213213920593,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10891
+    },
+    {
+      "path": "ds\\img\\174.png",
+      "label": 1,
+      "image_score": 0.6690017580986023,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11569
+    },
+    {
+      "path": "ds\\img\\175.png",
+      "label": 1,
+      "image_score": 0.8318344354629517,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15186
+    },
+    {
+      "path": "ds\\img\\176.png",
+      "label": 1,
+      "image_score": 0.6366636753082275,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12779
+    },
+    {
+      "path": "ds\\img\\177.png",
+      "label": 1,
+      "image_score": 0.7886157035827637,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8205
+    },
+    {
+      "path": "ds\\img\\178.png",
+      "label": 1,
+      "image_score": 0.563231348991394,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 424
+    },
+    {
+      "path": "ds\\img\\179.png",
+      "label": 1,
+      "image_score": 0.826263964176178,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2998
+    },
+    {
+      "path": "ds\\img\\18.png",
+      "label": 1,
+      "image_score": 0.7545719742774963,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11657
+    },
+    {
+      "path": "ds\\img\\180.png",
+      "label": 1,
+      "image_score": 0.7272323966026306,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3392
+    },
+    {
+      "path": "ds\\img\\181.png",
+      "label": 1,
+      "image_score": 0.7810471653938293,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3214
+    },
+    {
+      "path": "ds\\img\\182.png",
+      "label": 1,
+      "image_score": 0.7413263320922852,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3509
+    },
+    {
+      "path": "ds\\img\\183.png",
+      "label": 1,
+      "image_score": 0.7531400322914124,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3267
+    },
+    {
+      "path": "ds\\img\\184.png",
+      "label": 1,
+      "image_score": 0.7429279685020447,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3161
+    },
+    {
+      "path": "ds\\img\\185.png",
+      "label": 1,
+      "image_score": 0.5706121325492859,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4893
+    },
+    {
+      "path": "ds\\img\\186.png",
+      "label": 1,
+      "image_score": 0.6221185326576233,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8145
+    },
+    {
+      "path": "ds\\img\\187.png",
+      "label": 1,
+      "image_score": 0.6592026948928833,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13123
+    },
+    {
+      "path": "ds\\img\\188.png",
+      "label": 1,
+      "image_score": 0.7149883508682251,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13230
+    },
+    {
+      "path": "ds\\img\\189.png",
+      "label": 1,
+      "image_score": 0.7548080682754517,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5153
+    },
+    {
+      "path": "ds\\img\\19.png",
+      "label": 1,
+      "image_score": 0.6962555646896362,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18092
+    },
+    {
+      "path": "ds\\img\\190.png",
+      "label": 1,
+      "image_score": 0.7198538780212402,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3382
+    },
+    {
+      "path": "ds\\img\\191.png",
+      "label": 1,
+      "image_score": 0.5647367238998413,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1267
+    },
+    {
+      "path": "ds\\img\\192.png",
+      "label": 1,
+      "image_score": 0.5921075344085693,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1441
+    },
+    {
+      "path": "ds\\img\\193.png",
+      "label": 1,
+      "image_score": 0.7749179601669312,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2368
+    },
+    {
+      "path": "ds\\img\\194.png",
+      "label": 1,
+      "image_score": 0.7118687033653259,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4791
+    },
+    {
+      "path": "ds\\img\\195.png",
+      "label": 1,
+      "image_score": 0.6575061678886414,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4349
+    },
+    {
+      "path": "ds\\img\\196.png",
+      "label": 1,
+      "image_score": 0.684481143951416,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4381
+    },
+    {
+      "path": "ds\\img\\197.png",
+      "label": 1,
+      "image_score": 0.7422661185264587,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4713
+    },
+    {
+      "path": "ds\\img\\198.png",
+      "label": 1,
+      "image_score": 0.7266494035720825,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4463
+    },
+    {
+      "path": "ds\\img\\199.png",
+      "label": 1,
+      "image_score": 0.7002509832382202,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4370
+    },
+    {
+      "path": "ds\\img\\2.png",
+      "label": 1,
+      "image_score": 0.6905259490013123,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20532
+    },
+    {
+      "path": "ds\\img\\20.png",
+      "label": 1,
+      "image_score": 0.7315202951431274,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18086
+    },
+    {
+      "path": "ds\\img\\200.png",
+      "label": 1,
+      "image_score": 0.6526650786399841,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5819
+    },
+    {
+      "path": "ds\\img\\201.png",
+      "label": 1,
+      "image_score": 0.5771265625953674,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5891
+    },
+    {
+      "path": "ds\\img\\202.png",
+      "label": 1,
+      "image_score": 0.6314960718154907,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5457
+    },
+    {
+      "path": "ds\\img\\203.png",
+      "label": 1,
+      "image_score": 0.716802179813385,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4994
+    },
+    {
+      "path": "ds\\img\\204.png",
+      "label": 1,
+      "image_score": 0.680675208568573,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3519
+    },
+    {
+      "path": "ds\\img\\205.png",
+      "label": 1,
+      "image_score": 0.7194168567657471,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3027
+    },
+    {
+      "path": "ds\\img\\206.png",
+      "label": 1,
+      "image_score": 0.5925951600074768,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8644
+    },
+    {
+      "path": "ds\\img\\207.png",
+      "label": 1,
+      "image_score": 0.7389252185821533,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8722
+    },
+    {
+      "path": "ds\\img\\208.png",
+      "label": 1,
+      "image_score": 0.38467302918434143,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4154
+    },
+    {
+      "path": "ds\\img\\209.png",
+      "label": 1,
+      "image_score": 0.5137838125228882,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2830
+    },
+    {
+      "path": "ds\\img\\21.png",
+      "label": 1,
+      "image_score": 0.7204734683036804,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 29873
+    },
+    {
+      "path": "ds\\img\\210.png",
+      "label": 1,
+      "image_score": 0.6639370322227478,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 28064
+    },
+    {
+      "path": "ds\\img\\211.png",
+      "label": 1,
+      "image_score": 0.6605924963951111,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21724
+    },
+    {
+      "path": "ds\\img\\212.png",
+      "label": 1,
+      "image_score": 0.5747373700141907,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17050
+    },
+    {
+      "path": "ds\\img\\213.png",
+      "label": 1,
+      "image_score": 0.6016523241996765,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16194
+    },
+    {
+      "path": "ds\\img\\214.png",
+      "label": 1,
+      "image_score": 0.6463253498077393,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10614
+    },
+    {
+      "path": "ds\\img\\215.png",
+      "label": 1,
+      "image_score": 0.7011427879333496,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10240
+    },
+    {
+      "path": "ds\\img\\216.png",
+      "label": 1,
+      "image_score": 0.7687209248542786,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12285
+    },
+    {
+      "path": "ds\\img\\217.png",
+      "label": 1,
+      "image_score": 0.6295633316040039,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11071
+    },
+    {
+      "path": "ds\\img\\218.png",
+      "label": 1,
+      "image_score": 0.8129075169563293,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8619
+    },
+    {
+      "path": "ds\\img\\219.png",
+      "label": 1,
+      "image_score": 0.7360362410545349,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7059
+    },
+    {
+      "path": "ds\\img\\22.png",
+      "label": 1,
+      "image_score": 0.7049158811569214,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 53593
+    },
+    {
+      "path": "ds\\img\\220.png",
+      "label": 1,
+      "image_score": 0.8256466388702393,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4939
+    },
+    {
+      "path": "ds\\img\\221.png",
+      "label": 1,
+      "image_score": 0.7595102787017822,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4055
+    },
+    {
+      "path": "ds\\img\\222.png",
+      "label": 1,
+      "image_score": 0.7869182229042053,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3450
+    },
+    {
+      "path": "ds\\img\\223.png",
+      "label": 1,
+      "image_score": 0.7841208577156067,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3348
+    },
+    {
+      "path": "ds\\img\\224.png",
+      "label": 1,
+      "image_score": 0.8313162922859192,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2680
+    },
+    {
+      "path": "ds\\img\\225.png",
+      "label": 1,
+      "image_score": 0.7832528352737427,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3343
+    },
+    {
+      "path": "ds\\img\\226.png",
+      "label": 1,
+      "image_score": 0.7982724905014038,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5227
+    },
+    {
+      "path": "ds\\img\\227.png",
+      "label": 1,
+      "image_score": 0.8063954710960388,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3005
+    },
+    {
+      "path": "ds\\img\\228.png",
+      "label": 1,
+      "image_score": 0.9144392013549805,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8445
+    },
+    {
+      "path": "ds\\img\\229.png",
+      "label": 1,
+      "image_score": 0.9348994493484497,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8445
+    },
+    {
+      "path": "ds\\img\\23.png",
+      "label": 1,
+      "image_score": 0.6531946063041687,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 26915
+    },
+    {
+      "path": "ds\\img\\230.png",
+      "label": 1,
+      "image_score": 0.7707576751708984,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22231
+    },
+    {
+      "path": "ds\\img\\231.png",
+      "label": 1,
+      "image_score": 0.7067331075668335,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19212
+    },
+    {
+      "path": "ds\\img\\232.png",
+      "label": 1,
+      "image_score": 0.8204644322395325,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17871
+    },
+    {
+      "path": "ds\\img\\233.png",
+      "label": 1,
+      "image_score": 0.7135425806045532,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18324
+    },
+    {
+      "path": "ds\\img\\234.png",
+      "label": 1,
+      "image_score": 0.816664457321167,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16173
+    },
+    {
+      "path": "ds\\img\\235.png",
+      "label": 1,
+      "image_score": 0.8298200964927673,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14277
+    },
+    {
+      "path": "ds\\img\\236.png",
+      "label": 1,
+      "image_score": 0.8502402305603027,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11581
+    },
+    {
+      "path": "ds\\img\\237.png",
+      "label": 1,
+      "image_score": 0.8847767114639282,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13789
+    },
+    {
+      "path": "ds\\img\\238.png",
+      "label": 1,
+      "image_score": 0.8442625403404236,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13183
+    },
+    {
+      "path": "ds\\img\\239.png",
+      "label": 1,
+      "image_score": 0.8240544199943542,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13293
+    },
+    {
+      "path": "ds\\img\\24.png",
+      "label": 1,
+      "image_score": 0.5372028350830078,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22692
+    },
+    {
+      "path": "ds\\img\\240.png",
+      "label": 1,
+      "image_score": 0.8634992241859436,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12643
+    },
+    {
+      "path": "ds\\img\\241.png",
+      "label": 1,
+      "image_score": 0.8231285810470581,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13920
+    },
+    {
+      "path": "ds\\img\\242.png",
+      "label": 1,
+      "image_score": 0.7884434461593628,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13155
+    },
+    {
+      "path": "ds\\img\\243.png",
+      "label": 1,
+      "image_score": 0.740529477596283,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10134
+    },
+    {
+      "path": "ds\\img\\244.png",
+      "label": 1,
+      "image_score": 0.8036834001541138,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9414
+    },
+    {
+      "path": "ds\\img\\245.png",
+      "label": 1,
+      "image_score": 0.8295640349388123,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7863
+    },
+    {
+      "path": "ds\\img\\246.png",
+      "label": 1,
+      "image_score": 0.7957233786582947,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12300
+    },
+    {
+      "path": "ds\\img\\247.png",
+      "label": 1,
+      "image_score": 0.7607104778289795,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15002
+    },
+    {
+      "path": "ds\\img\\248.png",
+      "label": 1,
+      "image_score": 0.8408658504486084,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13368
+    },
+    {
+      "path": "ds\\img\\249.png",
+      "label": 1,
+      "image_score": 0.8270561695098877,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10674
+    },
+    {
+      "path": "ds\\img\\25.png",
+      "label": 1,
+      "image_score": 0.6768224239349365,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 50740
+    },
+    {
+      "path": "ds\\img\\250.png",
+      "label": 1,
+      "image_score": 0.8101809024810791,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10176
+    },
+    {
+      "path": "ds\\img\\251.png",
+      "label": 1,
+      "image_score": 0.8595360517501831,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7983
+    },
+    {
+      "path": "ds\\img\\252.png",
+      "label": 1,
+      "image_score": 0.8245571255683899,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11345
+    },
+    {
+      "path": "ds\\img\\253.png",
+      "label": 1,
+      "image_score": 0.449359267950058,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 24680
+    },
+    {
+      "path": "ds\\img\\254.png",
+      "label": 1,
+      "image_score": 0.6890566349029541,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23452
+    },
+    {
+      "path": "ds\\img\\255.png",
+      "label": 1,
+      "image_score": 0.6496902108192444,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21148
+    },
+    {
+      "path": "ds\\img\\256.png",
+      "label": 1,
+      "image_score": 0.7902662754058838,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22484
+    },
+    {
+      "path": "ds\\img\\257.png",
+      "label": 1,
+      "image_score": 0.546238899230957,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 26837
+    },
+    {
+      "path": "ds\\img\\258.png",
+      "label": 1,
+      "image_score": 0.5587444305419922,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23733
+    },
+    {
+      "path": "ds\\img\\259.png",
+      "label": 1,
+      "image_score": 0.5798233151435852,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 24281
+    },
+    {
+      "path": "ds\\img\\26.png",
+      "label": 1,
+      "image_score": 0.7885037064552307,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1458
+    },
+    {
+      "path": "ds\\img\\260.png",
+      "label": 1,
+      "image_score": 0.5087835192680359,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23970
+    },
+    {
+      "path": "ds\\img\\261.png",
+      "label": 1,
+      "image_score": 0.5135615468025208,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21448
+    },
+    {
+      "path": "ds\\img\\262.png",
+      "label": 1,
+      "image_score": 0.5175833702087402,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15162
+    },
+    {
+      "path": "ds\\img\\263.png",
+      "label": 1,
+      "image_score": 0.4752490818500519,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11311
+    },
+    {
+      "path": "ds\\img\\264.png",
+      "label": 1,
+      "image_score": 0.6567943692207336,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25352
+    },
+    {
+      "path": "ds\\img\\265.png",
+      "label": 1,
+      "image_score": 0.7065202593803406,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25575
+    },
+    {
+      "path": "ds\\img\\266.png",
+      "label": 1,
+      "image_score": 0.5029228925704956,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 26697
+    },
+    {
+      "path": "ds\\img\\267.png",
+      "label": 1,
+      "image_score": 0.5885207056999207,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19120
+    },
+    {
+      "path": "ds\\img\\268.png",
+      "label": 1,
+      "image_score": 0.6954360604286194,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 24760
+    },
+    {
+      "path": "ds\\img\\269.png",
+      "label": 1,
+      "image_score": 0.6454722881317139,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18086
+    },
+    {
+      "path": "ds\\img\\27.png",
+      "label": 1,
+      "image_score": 0.7749121785163879,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1490
+    },
+    {
+      "path": "ds\\img\\270.png",
+      "label": 1,
+      "image_score": 0.6747120022773743,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21210
+    },
+    {
+      "path": "ds\\img\\271.png",
+      "label": 1,
+      "image_score": 0.6576781868934631,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 29453
+    },
+    {
+      "path": "ds\\img\\272.png",
+      "label": 1,
+      "image_score": 0.7301943302154541,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 35211
+    },
+    {
+      "path": "ds\\img\\273.png",
+      "label": 1,
+      "image_score": 0.6427936553955078,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 30893
+    },
+    {
+      "path": "ds\\img\\274.png",
+      "label": 1,
+      "image_score": 0.6173511147499084,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 32509
+    },
+    {
+      "path": "ds\\img\\275.png",
+      "label": 1,
+      "image_score": 0.6249533891677856,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25966
+    },
+    {
+      "path": "ds\\img\\276.png",
+      "label": 1,
+      "image_score": 0.7021641731262207,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22053
+    },
+    {
+      "path": "ds\\img\\277.png",
+      "label": 1,
+      "image_score": 0.4978109300136566,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15201
+    },
+    {
+      "path": "ds\\img\\278.png",
+      "label": 1,
+      "image_score": 0.7526206374168396,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2375
+    },
+    {
+      "path": "ds\\img\\279.png",
+      "label": 1,
+      "image_score": 0.8271082639694214,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2740
+    },
+    {
+      "path": "ds\\img\\28.png",
+      "label": 1,
+      "image_score": 0.6725397109985352,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3683
+    },
+    {
+      "path": "ds\\img\\280.png",
+      "label": 1,
+      "image_score": 0.6824212074279785,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3184
+    },
+    {
+      "path": "ds\\img\\281.png",
+      "label": 1,
+      "image_score": 0.7580941915512085,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3652
+    },
+    {
+      "path": "ds\\img\\282.png",
+      "label": 1,
+      "image_score": 0.5069347620010376,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4098
+    },
+    {
+      "path": "ds\\img\\283.png",
+      "label": 1,
+      "image_score": 0.692693829536438,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4068
+    },
+    {
+      "path": "ds\\img\\284.png",
+      "label": 1,
+      "image_score": 0.6258018016815186,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3089
+    },
+    {
+      "path": "ds\\img\\285.png",
+      "label": 1,
+      "image_score": 0.6341059803962708,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3393
+    },
+    {
+      "path": "ds\\img\\286.png",
+      "label": 1,
+      "image_score": 0.6684781908988953,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3726
+    },
+    {
+      "path": "ds\\img\\287.png",
+      "label": 1,
+      "image_score": 0.6624205708503723,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3507
+    },
+    {
+      "path": "ds\\img\\288.png",
+      "label": 1,
+      "image_score": 0.6841349601745605,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3708
+    },
+    {
+      "path": "ds\\img\\289.png",
+      "label": 1,
+      "image_score": 0.6990864872932434,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3243
+    },
+    {
+      "path": "ds\\img\\29.png",
+      "label": 1,
+      "image_score": 0.6791471242904663,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4432
+    },
+    {
+      "path": "ds\\img\\290.png",
+      "label": 1,
+      "image_score": 0.6711714267730713,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1888
+    },
+    {
+      "path": "ds\\img\\291.png",
+      "label": 1,
+      "image_score": 0.8386118412017822,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1651
+    },
+    {
+      "path": "ds\\img\\292.png",
+      "label": 1,
+      "image_score": 0.7131321430206299,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2409
+    },
+    {
+      "path": "ds\\img\\293.png",
+      "label": 1,
+      "image_score": 0.5723928809165955,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3637
+    },
+    {
+      "path": "ds\\img\\294.png",
+      "label": 1,
+      "image_score": 0.591071605682373,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3793
+    },
+    {
+      "path": "ds\\img\\295.png",
+      "label": 1,
+      "image_score": 0.7263364195823669,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3570
+    },
+    {
+      "path": "ds\\img\\296.png",
+      "label": 1,
+      "image_score": 0.7199913263320923,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2739
+    },
+    {
+      "path": "ds\\img\\297.png",
+      "label": 1,
+      "image_score": 0.8057677745819092,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2831
+    },
+    {
+      "path": "ds\\img\\298.png",
+      "label": 1,
+      "image_score": 0.8078967928886414,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6777
+    },
+    {
+      "path": "ds\\img\\299.png",
+      "label": 1,
+      "image_score": 0.6585084795951843,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3293
+    },
+    {
+      "path": "ds\\img\\3.png",
+      "label": 1,
+      "image_score": 0.6521809101104736,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19996
+    },
+    {
+      "path": "ds\\img\\30.png",
+      "label": 1,
+      "image_score": 0.498665452003479,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9030
+    },
+    {
+      "path": "ds\\img\\300.png",
+      "label": 1,
+      "image_score": 0.7973098158836365,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8355
+    },
+    {
+      "path": "ds\\img\\301.png",
+      "label": 1,
+      "image_score": 0.7112744450569153,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5988
+    },
+    {
+      "path": "ds\\img\\302.png",
+      "label": 1,
+      "image_score": 0.6849126219749451,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8882
+    },
+    {
+      "path": "ds\\img\\303.png",
+      "label": 1,
+      "image_score": 0.843898355960846,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10425
+    },
+    {
+      "path": "ds\\img\\304.png",
+      "label": 1,
+      "image_score": 0.8164242506027222,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9730
+    },
+    {
+      "path": "ds\\img\\305.png",
+      "label": 1,
+      "image_score": 0.7928273677825928,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14312
+    },
+    {
+      "path": "ds\\img\\306.png",
+      "label": 1,
+      "image_score": 0.6980666518211365,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25729
+    },
+    {
+      "path": "ds\\img\\307.png",
+      "label": 1,
+      "image_score": 0.6351107954978943,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11026
+    },
+    {
+      "path": "ds\\img\\308.png",
+      "label": 1,
+      "image_score": 0.8372182846069336,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11526
+    },
+    {
+      "path": "ds\\img\\309.png",
+      "label": 1,
+      "image_score": 0.7996847033500671,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5168
+    },
+    {
+      "path": "ds\\img\\31.png",
+      "label": 1,
+      "image_score": 0.4630921185016632,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8349
+    },
+    {
+      "path": "ds\\img\\310.png",
+      "label": 1,
+      "image_score": 0.780389666557312,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2540
+    },
+    {
+      "path": "ds\\img\\311.png",
+      "label": 1,
+      "image_score": 0.7321627140045166,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2869
+    },
+    {
+      "path": "ds\\img\\312.png",
+      "label": 1,
+      "image_score": 0.7974868416786194,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1277
+    },
+    {
+      "path": "ds\\img\\313.png",
+      "label": 1,
+      "image_score": 0.7415792942047119,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6655
+    },
+    {
+      "path": "ds\\img\\314.png",
+      "label": 1,
+      "image_score": 0.7767603397369385,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8655
+    },
+    {
+      "path": "ds\\img\\315.png",
+      "label": 1,
+      "image_score": 0.7056907415390015,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20111
+    },
+    {
+      "path": "ds\\img\\316.png",
+      "label": 1,
+      "image_score": 0.6597948670387268,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 31831
+    },
+    {
+      "path": "ds\\img\\317.png",
+      "label": 1,
+      "image_score": 0.7435247302055359,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15988
+    },
+    {
+      "path": "ds\\img\\318.png",
+      "label": 1,
+      "image_score": 0.7236242890357971,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2410
+    },
+    {
+      "path": "ds\\img\\319.png",
+      "label": 1,
+      "image_score": 0.7526335120201111,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2747
+    },
+    {
+      "path": "ds\\img\\32.png",
+      "label": 1,
+      "image_score": 0.6974889039993286,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9549
+    },
+    {
+      "path": "ds\\img\\320.png",
+      "label": 1,
+      "image_score": 0.7126632928848267,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4322
+    },
+    {
+      "path": "ds\\img\\321.png",
+      "label": 1,
+      "image_score": 0.757263720035553,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5984
+    },
+    {
+      "path": "ds\\img\\322.png",
+      "label": 1,
+      "image_score": 0.7029885053634644,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8072
+    },
+    {
+      "path": "ds\\img\\323.png",
+      "label": 1,
+      "image_score": 0.7883413434028625,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9874
+    },
+    {
+      "path": "ds\\img\\324.png",
+      "label": 1,
+      "image_score": 0.786202073097229,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6400
+    },
+    {
+      "path": "ds\\img\\325.png",
+      "label": 1,
+      "image_score": 0.7335985898971558,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4551
+    },
+    {
+      "path": "ds\\img\\326.png",
+      "label": 1,
+      "image_score": 0.7402800917625427,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4029
+    },
+    {
+      "path": "ds\\img\\327.png",
+      "label": 1,
+      "image_score": 0.817844808101654,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3491
+    },
+    {
+      "path": "ds\\img\\328.png",
+      "label": 1,
+      "image_score": 0.7266373038291931,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4368
+    },
+    {
+      "path": "ds\\img\\329.png",
+      "label": 1,
+      "image_score": 0.809859573841095,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4611
+    },
+    {
+      "path": "ds\\img\\33.png",
+      "label": 1,
+      "image_score": 0.6277228593826294,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11217
+    },
+    {
+      "path": "ds\\img\\330.png",
+      "label": 1,
+      "image_score": 0.8479959964752197,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5850
+    },
+    {
+      "path": "ds\\img\\331.png",
+      "label": 1,
+      "image_score": 0.8321177959442139,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7736
+    },
+    {
+      "path": "ds\\img\\332.png",
+      "label": 1,
+      "image_score": 0.7260667085647583,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5690
+    },
+    {
+      "path": "ds\\img\\333.png",
+      "label": 1,
+      "image_score": 0.7738283276557922,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5126
+    },
+    {
+      "path": "ds\\img\\334.png",
+      "label": 1,
+      "image_score": 0.7423015832901001,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5510
+    },
+    {
+      "path": "ds\\img\\335.png",
+      "label": 1,
+      "image_score": 0.7642592191696167,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5878
+    },
+    {
+      "path": "ds\\img\\336.png",
+      "label": 1,
+      "image_score": 0.7994089126586914,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5336
+    },
+    {
+      "path": "ds\\img\\337.png",
+      "label": 1,
+      "image_score": 0.8086956143379211,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5795
+    },
+    {
+      "path": "ds\\img\\338.png",
+      "label": 1,
+      "image_score": 0.7929608821868896,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12965
+    },
+    {
+      "path": "ds\\img\\339.png",
+      "label": 1,
+      "image_score": 0.6485046148300171,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3055
+    },
+    {
+      "path": "ds\\img\\34.png",
+      "label": 1,
+      "image_score": 0.684428334236145,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6577
+    },
+    {
+      "path": "ds\\img\\340.png",
+      "label": 1,
+      "image_score": 0.804424524307251,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1870
+    },
+    {
+      "path": "ds\\img\\341.png",
+      "label": 1,
+      "image_score": 0.7445050477981567,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2419
+    },
+    {
+      "path": "ds\\img\\342.png",
+      "label": 1,
+      "image_score": 0.7493635416030884,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7980
+    },
+    {
+      "path": "ds\\img\\343.png",
+      "label": 1,
+      "image_score": 0.5877672433853149,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7360
+    },
+    {
+      "path": "ds\\img\\344.png",
+      "label": 1,
+      "image_score": 0.49085304141044617,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13632
+    },
+    {
+      "path": "ds\\img\\345.png",
+      "label": 1,
+      "image_score": 0.591191828250885,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12714
+    },
+    {
+      "path": "ds\\img\\346.png",
+      "label": 1,
+      "image_score": 0.5156463384628296,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3863
+    },
+    {
+      "path": "ds\\img\\347.png",
+      "label": 1,
+      "image_score": 0.6867131590843201,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5019
+    },
+    {
+      "path": "ds\\img\\348.png",
+      "label": 1,
+      "image_score": 0.6555394530296326,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23020
+    },
+    {
+      "path": "ds\\img\\349.png",
+      "label": 1,
+      "image_score": 0.49522557854652405,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23718
+    },
+    {
+      "path": "ds\\img\\35.png",
+      "label": 1,
+      "image_score": 0.6363444924354553,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7210
+    },
+    {
+      "path": "ds\\img\\350.png",
+      "label": 1,
+      "image_score": 0.687962532043457,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13923
+    },
+    {
+      "path": "ds\\img\\351.png",
+      "label": 1,
+      "image_score": 0.5246381759643555,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4183
+    },
+    {
+      "path": "ds\\img\\352.png",
+      "label": 1,
+      "image_score": 0.4230407178401947,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4068
+    },
+    {
+      "path": "ds\\img\\353.png",
+      "label": 1,
+      "image_score": 0.6750021576881409,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7932
+    },
+    {
+      "path": "ds\\img\\354.png",
+      "label": 1,
+      "image_score": 0.6188404560089111,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7693
+    },
+    {
+      "path": "ds\\img\\355.png",
+      "label": 1,
+      "image_score": 0.7381737232208252,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9833
+    },
+    {
+      "path": "ds\\img\\356.png",
+      "label": 1,
+      "image_score": 0.6409810781478882,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9753
+    },
+    {
+      "path": "ds\\img\\357.png",
+      "label": 1,
+      "image_score": 0.7406734228134155,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21355
+    },
+    {
+      "path": "ds\\img\\358.png",
+      "label": 1,
+      "image_score": 0.6467844247817993,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8804
+    },
+    {
+      "path": "ds\\img\\359.png",
+      "label": 1,
+      "image_score": 0.7535035014152527,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11307
+    },
+    {
+      "path": "ds\\img\\36.png",
+      "label": 1,
+      "image_score": 0.7194420695304871,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3984
+    },
+    {
+      "path": "ds\\img\\360.png",
+      "label": 1,
+      "image_score": 0.6659026145935059,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13409
+    },
+    {
+      "path": "ds\\img\\361.png",
+      "label": 1,
+      "image_score": 0.5366942286491394,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11006
+    },
+    {
+      "path": "ds\\img\\362.png",
+      "label": 1,
+      "image_score": 0.474715918302536,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9043
+    },
+    {
+      "path": "ds\\img\\363.png",
+      "label": 1,
+      "image_score": 0.5523747801780701,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1455
+    },
+    {
+      "path": "ds\\img\\364.png",
+      "label": 1,
+      "image_score": 0.7716878652572632,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2359
+    },
+    {
+      "path": "ds\\img\\365.png",
+      "label": 1,
+      "image_score": 0.6693443655967712,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1987
+    },
+    {
+      "path": "ds\\img\\366.png",
+      "label": 1,
+      "image_score": 0.7417560815811157,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1969
+    },
+    {
+      "path": "ds\\img\\367.png",
+      "label": 1,
+      "image_score": 0.6959056258201599,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2244
+    },
+    {
+      "path": "ds\\img\\368.png",
+      "label": 1,
+      "image_score": 0.7314776182174683,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2064
+    },
+    {
+      "path": "ds\\img\\369.png",
+      "label": 1,
+      "image_score": 0.6976276636123657,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1678
+    },
+    {
+      "path": "ds\\img\\37.png",
+      "label": 1,
+      "image_score": 0.6903272271156311,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7907
+    },
+    {
+      "path": "ds\\img\\370.png",
+      "label": 1,
+      "image_score": 0.6487435102462769,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1613
+    },
+    {
+      "path": "ds\\img\\371.png",
+      "label": 1,
+      "image_score": 0.7403110861778259,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1092
+    },
+    {
+      "path": "ds\\img\\372.png",
+      "label": 1,
+      "image_score": 0.7261102199554443,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1008
+    },
+    {
+      "path": "ds\\img\\373.png",
+      "label": 1,
+      "image_score": 0.6456971168518066,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1060
+    },
+    {
+      "path": "ds\\img\\374.png",
+      "label": 1,
+      "image_score": 0.4467182755470276,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1298
+    },
+    {
+      "path": "ds\\img\\375.png",
+      "label": 1,
+      "image_score": 0.6691535711288452,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 953
+    },
+    {
+      "path": "ds\\img\\376.png",
+      "label": 1,
+      "image_score": 0.7287264466285706,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2587
+    },
+    {
+      "path": "ds\\img\\377.png",
+      "label": 1,
+      "image_score": 0.7002625465393066,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2176
+    },
+    {
+      "path": "ds\\img\\378.png",
+      "label": 1,
+      "image_score": 0.6782039999961853,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1898
+    },
+    {
+      "path": "ds\\img\\379.png",
+      "label": 1,
+      "image_score": 0.7868291139602661,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1374
+    },
+    {
+      "path": "ds\\img\\38.png",
+      "label": 1,
+      "image_score": 0.6174980998039246,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4607
+    },
+    {
+      "path": "ds\\img\\380.png",
+      "label": 1,
+      "image_score": 0.7127485275268555,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1824
+    },
+    {
+      "path": "ds\\img\\381.png",
+      "label": 1,
+      "image_score": 0.631264328956604,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2684
+    },
+    {
+      "path": "ds\\img\\382.png",
+      "label": 1,
+      "image_score": 0.640572726726532,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3173
+    },
+    {
+      "path": "ds\\img\\383.png",
+      "label": 1,
+      "image_score": 0.6545464992523193,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2947
+    },
+    {
+      "path": "ds\\img\\384.png",
+      "label": 1,
+      "image_score": 0.7581197619438171,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 29959
+    },
+    {
+      "path": "ds\\img\\385.png",
+      "label": 1,
+      "image_score": 0.6974002718925476,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 26189
+    },
+    {
+      "path": "ds\\img\\386.png",
+      "label": 1,
+      "image_score": 0.4953269064426422,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 28236
+    },
+    {
+      "path": "ds\\img\\387.png",
+      "label": 1,
+      "image_score": 0.6032066941261292,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 27717
+    },
+    {
+      "path": "ds\\img\\388.png",
+      "label": 1,
+      "image_score": 0.6087612509727478,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 25647
+    },
+    {
+      "path": "ds\\img\\389.png",
+      "label": 1,
+      "image_score": 0.6854866743087769,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21404
+    },
+    {
+      "path": "ds\\img\\39.png",
+      "label": 1,
+      "image_score": 0.7018629312515259,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4244
+    },
+    {
+      "path": "ds\\img\\390.png",
+      "label": 1,
+      "image_score": 0.720458984375,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18146
+    },
+    {
+      "path": "ds\\img\\391.png",
+      "label": 1,
+      "image_score": 0.603672444820404,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5398
+    },
+    {
+      "path": "ds\\img\\392.png",
+      "label": 1,
+      "image_score": 0.6481985449790955,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8254
+    },
+    {
+      "path": "ds\\img\\393.png",
+      "label": 1,
+      "image_score": 0.4892458915710449,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7465
+    },
+    {
+      "path": "ds\\img\\394.png",
+      "label": 1,
+      "image_score": 0.670322835445404,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7846
+    },
+    {
+      "path": "ds\\img\\395.png",
+      "label": 1,
+      "image_score": 0.5476967692375183,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11212
+    },
+    {
+      "path": "ds\\img\\396.png",
+      "label": 1,
+      "image_score": 0.5607783198356628,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11380
+    },
+    {
+      "path": "ds\\img\\397.png",
+      "label": 1,
+      "image_score": 0.5922666788101196,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14896
+    },
+    {
+      "path": "ds\\img\\398.png",
+      "label": 1,
+      "image_score": 0.5880668759346008,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18205
+    },
+    {
+      "path": "ds\\img\\399.png",
+      "label": 1,
+      "image_score": 0.5027469396591187,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11952
+    },
+    {
+      "path": "ds\\img\\4.png",
+      "label": 1,
+      "image_score": 0.7261625528335571,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21180
+    },
+    {
+      "path": "ds\\img\\40.png",
+      "label": 1,
+      "image_score": 0.7839215993881226,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7924
+    },
+    {
+      "path": "ds\\img\\400.png",
+      "label": 1,
+      "image_score": 0.7685877680778503,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6796
+    },
+    {
+      "path": "ds\\img\\401.png",
+      "label": 1,
+      "image_score": 0.6807456612586975,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9366
+    },
+    {
+      "path": "ds\\img\\402.png",
+      "label": 1,
+      "image_score": 0.5608307719230652,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13992
+    },
+    {
+      "path": "ds\\img\\403.png",
+      "label": 1,
+      "image_score": 0.6326205730438232,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9436
+    },
+    {
+      "path": "ds\\img\\404.png",
+      "label": 1,
+      "image_score": 0.6392034888267517,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10879
+    },
+    {
+      "path": "ds\\img\\405.png",
+      "label": 1,
+      "image_score": 0.5032888054847717,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9051
+    },
+    {
+      "path": "ds\\img\\406.png",
+      "label": 1,
+      "image_score": 0.6488063335418701,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9657
+    },
+    {
+      "path": "ds\\img\\407.png",
+      "label": 1,
+      "image_score": 0.6617798805236816,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10814
+    },
+    {
+      "path": "ds\\img\\408.png",
+      "label": 1,
+      "image_score": 0.5753316879272461,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7963
+    },
+    {
+      "path": "ds\\img\\409.png",
+      "label": 1,
+      "image_score": 0.7898165583610535,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 28687
+    },
+    {
+      "path": "ds\\img\\41.png",
+      "label": 1,
+      "image_score": 0.651628851890564,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4717
+    },
+    {
+      "path": "ds\\img\\410.png",
+      "label": 1,
+      "image_score": 0.5536644458770752,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8883
+    },
+    {
+      "path": "ds\\img\\411.png",
+      "label": 1,
+      "image_score": 0.6368595361709595,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6430
+    },
+    {
+      "path": "ds\\img\\412.png",
+      "label": 1,
+      "image_score": 0.6677017211914062,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6847
+    },
+    {
+      "path": "ds\\img\\413.png",
+      "label": 1,
+      "image_score": 0.7372247576713562,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6787
+    },
+    {
+      "path": "ds\\img\\414.png",
+      "label": 1,
+      "image_score": 0.6590166091918945,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 31654
+    },
+    {
+      "path": "ds\\img\\415.png",
+      "label": 1,
+      "image_score": 0.7700518369674683,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15425
+    },
+    {
+      "path": "ds\\img\\416.png",
+      "label": 1,
+      "image_score": 0.7852588891983032,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14349
+    },
+    {
+      "path": "ds\\img\\417.png",
+      "label": 1,
+      "image_score": 0.8233806490898132,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10305
+    },
+    {
+      "path": "ds\\img\\418.png",
+      "label": 1,
+      "image_score": 0.7887309789657593,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5306
+    },
+    {
+      "path": "ds\\img\\419.png",
+      "label": 1,
+      "image_score": 0.7729957103729248,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15118
+    },
+    {
+      "path": "ds\\img\\42.png",
+      "label": 1,
+      "image_score": 0.7689784169197083,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6873
+    },
+    {
+      "path": "ds\\img\\420.png",
+      "label": 1,
+      "image_score": 0.7615318298339844,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17949
+    },
+    {
+      "path": "ds\\img\\421.png",
+      "label": 1,
+      "image_score": 0.797946572303772,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15335
+    },
+    {
+      "path": "ds\\img\\422.png",
+      "label": 1,
+      "image_score": 0.8104414343833923,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 34386
+    },
+    {
+      "path": "ds\\img\\423.png",
+      "label": 1,
+      "image_score": 0.7130586504936218,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16510
+    },
+    {
+      "path": "ds\\img\\424.png",
+      "label": 1,
+      "image_score": 0.7607892155647278,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2568
+    },
+    {
+      "path": "ds\\img\\425.png",
+      "label": 1,
+      "image_score": 0.5835985541343689,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2726
+    },
+    {
+      "path": "ds\\img\\426.png",
+      "label": 1,
+      "image_score": 0.722497820854187,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9630
+    },
+    {
+      "path": "ds\\img\\427.png",
+      "label": 1,
+      "image_score": 0.7595687508583069,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12402
+    },
+    {
+      "path": "ds\\img\\428.png",
+      "label": 1,
+      "image_score": 0.7069789171218872,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11181
+    },
+    {
+      "path": "ds\\img\\429.png",
+      "label": 1,
+      "image_score": 0.8138160109519958,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7673
+    },
+    {
+      "path": "ds\\img\\43.png",
+      "label": 1,
+      "image_score": 0.6794019341468811,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5532
+    },
+    {
+      "path": "ds\\img\\430.png",
+      "label": 1,
+      "image_score": 0.8284106254577637,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7237
+    },
+    {
+      "path": "ds\\img\\431.png",
+      "label": 1,
+      "image_score": 0.8284507393836975,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6314
+    },
+    {
+      "path": "ds\\img\\432.png",
+      "label": 1,
+      "image_score": 0.7384327054023743,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8914
+    },
+    {
+      "path": "ds\\img\\433.png",
+      "label": 1,
+      "image_score": 0.8105381727218628,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9286
+    },
+    {
+      "path": "ds\\img\\434.png",
+      "label": 1,
+      "image_score": 0.7620232701301575,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9966
+    },
+    {
+      "path": "ds\\img\\435.png",
+      "label": 1,
+      "image_score": 0.7554734945297241,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7774
+    },
+    {
+      "path": "ds\\img\\436.png",
+      "label": 1,
+      "image_score": 0.8030794262886047,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7401
+    },
+    {
+      "path": "ds\\img\\437.png",
+      "label": 1,
+      "image_score": 0.8017528653144836,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7269
+    },
+    {
+      "path": "ds\\img\\438.png",
+      "label": 1,
+      "image_score": 0.7271878123283386,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17055
+    },
+    {
+      "path": "ds\\img\\439.png",
+      "label": 1,
+      "image_score": 0.7926028966903687,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7604
+    },
+    {
+      "path": "ds\\img\\44.png",
+      "label": 1,
+      "image_score": 0.7102009057998657,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8775
+    },
+    {
+      "path": "ds\\img\\440.png",
+      "label": 1,
+      "image_score": 0.7968674898147583,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5907
+    },
+    {
+      "path": "ds\\img\\441.png",
+      "label": 1,
+      "image_score": 0.7921488881111145,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2453
+    },
+    {
+      "path": "ds\\img\\442.png",
+      "label": 1,
+      "image_score": 0.6403442025184631,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4065
+    },
+    {
+      "path": "ds\\img\\443.png",
+      "label": 1,
+      "image_score": 0.7660539746284485,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6323
+    },
+    {
+      "path": "ds\\img\\444.png",
+      "label": 1,
+      "image_score": 0.6945693492889404,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7374
+    },
+    {
+      "path": "ds\\img\\445.png",
+      "label": 1,
+      "image_score": 0.7154370546340942,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14110
+    },
+    {
+      "path": "ds\\img\\446.png",
+      "label": 1,
+      "image_score": 0.6994802951812744,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13201
+    },
+    {
+      "path": "ds\\img\\447.png",
+      "label": 1,
+      "image_score": 0.8089600205421448,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3045
+    },
+    {
+      "path": "ds\\img\\448.png",
+      "label": 1,
+      "image_score": 0.7169352769851685,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6343
+    },
+    {
+      "path": "ds\\img\\449.png",
+      "label": 1,
+      "image_score": 0.7679886817932129,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4882
+    },
+    {
+      "path": "ds\\img\\45.png",
+      "label": 1,
+      "image_score": 0.7340026497840881,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6285
+    },
+    {
+      "path": "ds\\img\\450.png",
+      "label": 1,
+      "image_score": 0.8596779108047485,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2759
+    },
+    {
+      "path": "ds\\img\\451.png",
+      "label": 1,
+      "image_score": 0.7765799164772034,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2158
+    },
+    {
+      "path": "ds\\img\\452.png",
+      "label": 1,
+      "image_score": 0.7995525598526001,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3682
+    },
+    {
+      "path": "ds\\img\\453.png",
+      "label": 1,
+      "image_score": 0.7894502282142639,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4054
+    },
+    {
+      "path": "ds\\img\\454.png",
+      "label": 1,
+      "image_score": 0.7998968362808228,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6497
+    },
+    {
+      "path": "ds\\img\\455.png",
+      "label": 1,
+      "image_score": 0.810551643371582,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8402
+    },
+    {
+      "path": "ds\\img\\456.png",
+      "label": 1,
+      "image_score": 0.7376841902732849,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10900
+    },
+    {
+      "path": "ds\\img\\457.png",
+      "label": 1,
+      "image_score": 0.7546495199203491,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9764
+    },
+    {
+      "path": "ds\\img\\458.png",
+      "label": 1,
+      "image_score": 0.7996377944946289,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4612
+    },
+    {
+      "path": "ds\\img\\459.png",
+      "label": 1,
+      "image_score": 0.7664929628372192,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4190
+    },
+    {
+      "path": "ds\\img\\46.png",
+      "label": 1,
+      "image_score": 0.7303593754768372,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6339
+    },
+    {
+      "path": "ds\\img\\460.png",
+      "label": 1,
+      "image_score": 0.7218303084373474,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5364
+    },
+    {
+      "path": "ds\\img\\461.png",
+      "label": 1,
+      "image_score": 0.7348007559776306,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6585
+    },
+    {
+      "path": "ds\\img\\462.png",
+      "label": 1,
+      "image_score": 0.7355484962463379,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7591
+    },
+    {
+      "path": "ds\\img\\463.png",
+      "label": 1,
+      "image_score": 0.7111255526542664,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11680
+    },
+    {
+      "path": "ds\\img\\464.png",
+      "label": 1,
+      "image_score": 0.760136067867279,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8512
+    },
+    {
+      "path": "ds\\img\\465.png",
+      "label": 1,
+      "image_score": 0.6748588681221008,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12053
+    },
+    {
+      "path": "ds\\img\\466.png",
+      "label": 1,
+      "image_score": 0.73267662525177,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11347
+    },
+    {
+      "path": "ds\\img\\467.png",
+      "label": 1,
+      "image_score": 0.7565082311630249,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9826
+    },
+    {
+      "path": "ds\\img\\468.png",
+      "label": 1,
+      "image_score": 0.6711620092391968,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11824
+    },
+    {
+      "path": "ds\\img\\469.png",
+      "label": 1,
+      "image_score": 0.7873877882957458,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13356
+    },
+    {
+      "path": "ds\\img\\47.png",
+      "label": 1,
+      "image_score": 0.5440535545349121,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10397
+    },
+    {
+      "path": "ds\\img\\470.png",
+      "label": 1,
+      "image_score": 0.5535072088241577,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9954
+    },
+    {
+      "path": "ds\\img\\471.png",
+      "label": 1,
+      "image_score": 0.7808301448822021,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21515
+    },
+    {
+      "path": "ds\\img\\472.png",
+      "label": 1,
+      "image_score": 0.8161395788192749,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22982
+    },
+    {
+      "path": "ds\\img\\473.png",
+      "label": 1,
+      "image_score": 0.7738906145095825,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16813
+    },
+    {
+      "path": "ds\\img\\474.png",
+      "label": 1,
+      "image_score": 0.6462368965148926,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18848
+    },
+    {
+      "path": "ds\\img\\475.png",
+      "label": 1,
+      "image_score": 0.6041111946105957,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23771
+    },
+    {
+      "path": "ds\\img\\476.png",
+      "label": 1,
+      "image_score": 0.8227766752243042,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19763
+    },
+    {
+      "path": "ds\\img\\477.png",
+      "label": 1,
+      "image_score": 0.7917524576187134,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19699
+    },
+    {
+      "path": "ds\\img\\478.png",
+      "label": 1,
+      "image_score": 0.7570664286613464,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22694
+    },
+    {
+      "path": "ds\\img\\479.png",
+      "label": 1,
+      "image_score": 0.8477398753166199,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17316
+    },
+    {
+      "path": "ds\\img\\48.png",
+      "label": 1,
+      "image_score": 0.7905214428901672,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5046
+    },
+    {
+      "path": "ds\\img\\480.png",
+      "label": 1,
+      "image_score": 0.8859623670578003,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15712
+    },
+    {
+      "path": "ds\\img\\481.png",
+      "label": 1,
+      "image_score": 0.858596682548523,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15015
+    },
+    {
+      "path": "ds\\img\\482.png",
+      "label": 1,
+      "image_score": 0.7951814532279968,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21633
+    },
+    {
+      "path": "ds\\img\\483.png",
+      "label": 1,
+      "image_score": 0.8285284638404846,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22022
+    },
+    {
+      "path": "ds\\img\\484.png",
+      "label": 1,
+      "image_score": 0.8814072012901306,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18480
+    },
+    {
+      "path": "ds\\img\\485.png",
+      "label": 1,
+      "image_score": 0.8660651445388794,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14551
+    },
+    {
+      "path": "ds\\img\\486.png",
+      "label": 1,
+      "image_score": 0.8491677641868591,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5709
+    },
+    {
+      "path": "ds\\img\\487.png",
+      "label": 1,
+      "image_score": 0.7624369859695435,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11517
+    },
+    {
+      "path": "ds\\img\\488.png",
+      "label": 1,
+      "image_score": 0.8218156695365906,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11974
+    },
+    {
+      "path": "ds\\img\\489.png",
+      "label": 1,
+      "image_score": 0.7204232811927795,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 32065
+    },
+    {
+      "path": "ds\\img\\49.png",
+      "label": 1,
+      "image_score": 0.7181721329689026,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8882
+    },
+    {
+      "path": "ds\\img\\490.png",
+      "label": 1,
+      "image_score": 0.7926760911941528,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 54148
+    },
+    {
+      "path": "ds\\img\\491.png",
+      "label": 1,
+      "image_score": 0.8589792251586914,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20733
+    },
+    {
+      "path": "ds\\img\\492.png",
+      "label": 1,
+      "image_score": 0.7327225804328918,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22665
+    },
+    {
+      "path": "ds\\img\\493.png",
+      "label": 1,
+      "image_score": 0.7998053431510925,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20898
+    },
+    {
+      "path": "ds\\img\\494.png",
+      "label": 1,
+      "image_score": 0.8290938138961792,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17980
+    },
+    {
+      "path": "ds\\img\\495.png",
+      "label": 1,
+      "image_score": 0.756371796131134,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20607
+    },
+    {
+      "path": "ds\\img\\496.png",
+      "label": 1,
+      "image_score": 0.7100921273231506,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18881
+    },
+    {
+      "path": "ds\\img\\497.png",
+      "label": 1,
+      "image_score": 0.7870451211929321,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 39545
+    },
+    {
+      "path": "ds\\img\\498.png",
+      "label": 1,
+      "image_score": 0.8856899738311768,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 28690
+    },
+    {
+      "path": "ds\\img\\499.png",
+      "label": 1,
+      "image_score": 0.8590402603149414,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 26694
+    },
+    {
+      "path": "ds\\img\\5.png",
+      "label": 1,
+      "image_score": 0.5975673794746399,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18721
+    },
+    {
+      "path": "ds\\img\\50.png",
+      "label": 1,
+      "image_score": 0.7333585619926453,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2944
+    },
+    {
+      "path": "ds\\img\\500.png",
+      "label": 1,
+      "image_score": 0.792569637298584,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14733
+    },
+    {
+      "path": "ds\\img\\501.png",
+      "label": 1,
+      "image_score": 0.8462716937065125,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16924
+    },
+    {
+      "path": "ds\\img\\502.png",
+      "label": 1,
+      "image_score": 0.8574454188346863,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19603
+    },
+    {
+      "path": "ds\\img\\503.png",
+      "label": 1,
+      "image_score": 0.8082535862922668,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 22955
+    },
+    {
+      "path": "ds\\img\\504.png",
+      "label": 1,
+      "image_score": 0.5580510497093201,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10090
+    },
+    {
+      "path": "ds\\img\\505.png",
+      "label": 1,
+      "image_score": 0.6021126508712769,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15216
+    },
+    {
+      "path": "ds\\img\\506.png",
+      "label": 1,
+      "image_score": 0.8688523769378662,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 44681
+    },
+    {
+      "path": "ds\\img\\507.png",
+      "label": 1,
+      "image_score": 0.7053876519203186,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 41078
+    },
+    {
+      "path": "ds\\img\\508.png",
+      "label": 1,
+      "image_score": 0.789177656173706,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 16435
+    },
+    {
+      "path": "ds\\img\\509.png",
+      "label": 1,
+      "image_score": 0.7693396806716919,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12498
+    },
+    {
+      "path": "ds\\img\\51.png",
+      "label": 1,
+      "image_score": 0.6984385848045349,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1081
+    },
+    {
+      "path": "ds\\img\\510.png",
+      "label": 1,
+      "image_score": 0.6375647783279419,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 11543
+    },
+    {
+      "path": "ds\\img\\511.png",
+      "label": 1,
+      "image_score": 0.5138920545578003,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6983
+    },
+    {
+      "path": "ds\\img\\512.png",
+      "label": 1,
+      "image_score": 0.5907338261604309,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6611
+    },
+    {
+      "path": "ds\\img\\513.png",
+      "label": 1,
+      "image_score": 0.717431366443634,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7785
+    },
+    {
+      "path": "ds\\img\\514.png",
+      "label": 1,
+      "image_score": 0.7394012808799744,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10401
+    },
+    {
+      "path": "ds\\img\\515.png",
+      "label": 1,
+      "image_score": 0.6078600883483887,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8534
+    },
+    {
+      "path": "ds\\img\\516.png",
+      "label": 1,
+      "image_score": 0.6729354858398438,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13278
+    },
+    {
+      "path": "ds\\img\\517.png",
+      "label": 1,
+      "image_score": 0.7185945510864258,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8382
+    },
+    {
+      "path": "ds\\img\\518.png",
+      "label": 1,
+      "image_score": 0.6165497303009033,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6944
+    },
+    {
+      "path": "ds\\img\\519.png",
+      "label": 1,
+      "image_score": 0.6331723928451538,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 17452
+    },
+    {
+      "path": "ds\\img\\52.png",
+      "label": 1,
+      "image_score": 0.6790348887443542,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1050
+    },
+    {
+      "path": "ds\\img\\520.png",
+      "label": 1,
+      "image_score": 0.7855295538902283,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 21827
+    },
+    {
+      "path": "ds\\img\\521.png",
+      "label": 1,
+      "image_score": 0.5658329129219055,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10150
+    },
+    {
+      "path": "ds\\img\\522.png",
+      "label": 1,
+      "image_score": 0.6586424708366394,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7477
+    },
+    {
+      "path": "ds\\img\\523.png",
+      "label": 1,
+      "image_score": 0.7214678525924683,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4861
+    },
+    {
+      "path": "ds\\img\\524.png",
+      "label": 1,
+      "image_score": 0.7090079188346863,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 19764
+    },
+    {
+      "path": "ds\\img\\525.png",
+      "label": 1,
+      "image_score": 0.7509229779243469,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10932
+    },
+    {
+      "path": "ds\\img\\526.png",
+      "label": 1,
+      "image_score": 0.5290571451187134,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8567
+    },
+    {
+      "path": "ds\\img\\527.png",
+      "label": 1,
+      "image_score": 0.6794898509979248,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8483
+    },
+    {
+      "path": "ds\\img\\528.png",
+      "label": 1,
+      "image_score": 0.6351484060287476,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 10623
+    },
+    {
+      "path": "ds\\img\\529.png",
+      "label": 1,
+      "image_score": 0.7848141193389893,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2610
+    },
+    {
+      "path": "ds\\img\\53.png",
+      "label": 1,
+      "image_score": 0.8636911511421204,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 819
+    },
+    {
+      "path": "ds\\img\\530.png",
+      "label": 1,
+      "image_score": 0.701628565788269,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2533
+    },
+    {
+      "path": "ds\\img\\531.png",
+      "label": 1,
+      "image_score": 0.7744832634925842,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2916
+    },
+    {
+      "path": "ds\\img\\532.png",
+      "label": 1,
+      "image_score": 0.8293538093566895,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3527
+    },
+    {
+      "path": "ds\\img\\533.png",
+      "label": 1,
+      "image_score": 0.7795053720474243,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4749
+    },
+    {
+      "path": "ds\\img\\534.png",
+      "label": 1,
+      "image_score": 0.8012290596961975,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6125
+    },
+    {
+      "path": "ds\\img\\535.png",
+      "label": 1,
+      "image_score": 0.8268122673034668,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6495
+    },
+    {
+      "path": "ds\\img\\536.png",
+      "label": 1,
+      "image_score": 0.7967883348464966,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6836
+    },
+    {
+      "path": "ds\\img\\537.png",
+      "label": 1,
+      "image_score": 0.783517062664032,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4375
+    },
+    {
+      "path": "ds\\img\\538.png",
+      "label": 1,
+      "image_score": 0.8355902433395386,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4543
+    },
+    {
+      "path": "ds\\img\\539.png",
+      "label": 1,
+      "image_score": 0.8020721673965454,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7401
+    },
+    {
+      "path": "ds\\img\\54.png",
+      "label": 1,
+      "image_score": 0.8797258138656616,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 444
+    },
+    {
+      "path": "ds\\img\\540.png",
+      "label": 1,
+      "image_score": 0.7540850043296814,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13663
+    },
+    {
+      "path": "ds\\img\\541.png",
+      "label": 1,
+      "image_score": 0.7511558532714844,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5464
+    },
+    {
+      "path": "ds\\img\\542.png",
+      "label": 1,
+      "image_score": 0.7716614603996277,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6357
+    },
+    {
+      "path": "ds\\img\\543.png",
+      "label": 1,
+      "image_score": 0.8164836764335632,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9204
+    },
+    {
+      "path": "ds\\img\\544.png",
+      "label": 1,
+      "image_score": 0.8770670890808105,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14066
+    },
+    {
+      "path": "ds\\img\\545.png",
+      "label": 1,
+      "image_score": 0.7828505635261536,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6278
+    },
+    {
+      "path": "ds\\img\\546.png",
+      "label": 1,
+      "image_score": 0.8074631690979004,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6015
+    },
+    {
+      "path": "ds\\img\\547.png",
+      "label": 1,
+      "image_score": 0.7021859288215637,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4815
+    },
+    {
+      "path": "ds\\img\\548.png",
+      "label": 1,
+      "image_score": 0.7934069633483887,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6470
+    },
+    {
+      "path": "ds\\img\\549.png",
+      "label": 1,
+      "image_score": 0.5842246413230896,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1997
+    },
+    {
+      "path": "ds\\img\\55.png",
+      "label": 1,
+      "image_score": 0.8417568802833557,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 665
+    },
+    {
+      "path": "ds\\img\\550.png",
+      "label": 1,
+      "image_score": 0.6611050963401794,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6128
+    },
+    {
+      "path": "ds\\img\\551.png",
+      "label": 1,
+      "image_score": 0.631462812423706,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6183
+    },
+    {
+      "path": "ds\\img\\552.png",
+      "label": 1,
+      "image_score": 0.612093448638916,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6227
+    },
+    {
+      "path": "ds\\img\\553.png",
+      "label": 1,
+      "image_score": 0.7495778203010559,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7892
+    },
+    {
+      "path": "ds\\img\\554.png",
+      "label": 1,
+      "image_score": 0.8215727806091309,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8842
+    },
+    {
+      "path": "ds\\img\\555.png",
+      "label": 1,
+      "image_score": 0.7753682732582092,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7360
+    },
+    {
+      "path": "ds\\img\\556.png",
+      "label": 1,
+      "image_score": 0.8028497099876404,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7171
+    },
+    {
+      "path": "ds\\img\\557.png",
+      "label": 1,
+      "image_score": 0.7984163761138916,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5809
+    },
+    {
+      "path": "ds\\img\\558.png",
+      "label": 1,
+      "image_score": 0.6179704666137695,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5707
+    },
+    {
+      "path": "ds\\img\\559.png",
+      "label": 1,
+      "image_score": 0.7309215068817139,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 373
+    },
+    {
+      "path": "ds\\img\\56.png",
+      "label": 1,
+      "image_score": 0.9032554030418396,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2826
+    },
+    {
+      "path": "ds\\img\\560.png",
+      "label": 1,
+      "image_score": 0.5171023607254028,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3950
+    },
+    {
+      "path": "ds\\img\\561.png",
+      "label": 1,
+      "image_score": 0.5859484672546387,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5728
+    },
+    {
+      "path": "ds\\img\\562.png",
+      "label": 1,
+      "image_score": 0.7626640200614929,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7102
+    },
+    {
+      "path": "ds\\img\\563.png",
+      "label": 1,
+      "image_score": 0.7756709456443787,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12350
+    },
+    {
+      "path": "ds\\img\\564.png",
+      "label": 1,
+      "image_score": 0.7187589406967163,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 13382
+    },
+    {
+      "path": "ds\\img\\565.png",
+      "label": 1,
+      "image_score": 0.7169473171234131,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9380
+    },
+    {
+      "path": "ds\\img\\566.png",
+      "label": 1,
+      "image_score": 0.48432523012161255,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3472
+    },
+    {
+      "path": "ds\\img\\567.png",
+      "label": 1,
+      "image_score": 0.7356374263763428,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3626
+    },
+    {
+      "path": "ds\\img\\568.png",
+      "label": 1,
+      "image_score": 0.48317790031433105,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1355
+    },
+    {
+      "path": "ds\\img\\569.png",
+      "label": 1,
+      "image_score": 0.7558965682983398,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2541
+    },
+    {
+      "path": "ds\\img\\57.png",
+      "label": 1,
+      "image_score": 0.8339058756828308,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1354
+    },
+    {
+      "path": "ds\\img\\570.png",
+      "label": 1,
+      "image_score": 0.537778377532959,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2003
+    },
+    {
+      "path": "ds\\img\\571.png",
+      "label": 1,
+      "image_score": 0.4742373526096344,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4138
+    },
+    {
+      "path": "ds\\img\\572.png",
+      "label": 1,
+      "image_score": 0.8583701848983765,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4436
+    },
+    {
+      "path": "ds\\img\\573.png",
+      "label": 1,
+      "image_score": 0.8026076555252075,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2464
+    },
+    {
+      "path": "ds\\img\\574.png",
+      "label": 1,
+      "image_score": 0.8724274635314941,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2261
+    },
+    {
+      "path": "ds\\img\\575.png",
+      "label": 1,
+      "image_score": 0.5999243855476379,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4564
+    },
+    {
+      "path": "ds\\img\\576.png",
+      "label": 1,
+      "image_score": 0.7291996479034424,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5649
+    },
+    {
+      "path": "ds\\img\\577.png",
+      "label": 1,
+      "image_score": 0.7632573246955872,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5574
+    },
+    {
+      "path": "ds\\img\\578.png",
+      "label": 1,
+      "image_score": 0.6868082880973816,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5522
+    },
+    {
+      "path": "ds\\img\\579.png",
+      "label": 1,
+      "image_score": 0.8014094829559326,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 12943
+    },
+    {
+      "path": "ds\\img\\58.png",
+      "label": 1,
+      "image_score": 0.8883635997772217,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1341
+    },
+    {
+      "path": "ds\\img\\580.png",
+      "label": 1,
+      "image_score": 0.8206260800361633,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 15644
+    },
+    {
+      "path": "ds\\img\\581.png",
+      "label": 1,
+      "image_score": 0.7907231450080872,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 18509
+    },
+    {
+      "path": "ds\\img\\582.png",
+      "label": 1,
+      "image_score": 0.7672330737113953,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8713
+    },
+    {
+      "path": "ds\\img\\583.png",
+      "label": 1,
+      "image_score": 0.8128666877746582,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5130
+    },
+    {
+      "path": "ds\\img\\584.png",
+      "label": 1,
+      "image_score": 0.8465359807014465,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3078
+    },
+    {
+      "path": "ds\\img\\585.png",
+      "label": 1,
+      "image_score": 0.8923428058624268,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2417
+    },
+    {
+      "path": "ds\\img\\586.png",
+      "label": 1,
+      "image_score": 0.8062160611152649,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4440
+    },
+    {
+      "path": "ds\\img\\587.png",
+      "label": 1,
+      "image_score": 0.8167080283164978,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2559
+    },
+    {
+      "path": "ds\\img\\588.png",
+      "label": 1,
+      "image_score": 0.787039577960968,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2184
+    },
+    {
+      "path": "ds\\img\\589.png",
+      "label": 1,
+      "image_score": 0.8261282444000244,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2450
+    },
+    {
+      "path": "ds\\img\\59.png",
+      "label": 1,
+      "image_score": 0.8651431798934937,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1155
+    },
+    {
+      "path": "ds\\img\\590.png",
+      "label": 1,
+      "image_score": 0.7684383392333984,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2147
+    },
+    {
+      "path": "ds\\img\\591.png",
+      "label": 1,
+      "image_score": 0.8277283310890198,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1963
+    },
+    {
+      "path": "ds\\img\\592.png",
+      "label": 1,
+      "image_score": 0.7518706917762756,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4798
+    },
+    {
+      "path": "ds\\img\\593.png",
+      "label": 1,
+      "image_score": 0.6141133308410645,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4523
+    },
+    {
+      "path": "ds\\img\\594.png",
+      "label": 1,
+      "image_score": 0.5776196718215942,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4399
+    },
+    {
+      "path": "ds\\img\\595.png",
+      "label": 1,
+      "image_score": 0.7418190240859985,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2816
+    },
+    {
+      "path": "ds\\img\\596.png",
+      "label": 1,
+      "image_score": 0.6609926819801331,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2101
+    },
+    {
+      "path": "ds\\img\\597.png",
+      "label": 1,
+      "image_score": 0.6167615056037903,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1114
+    },
+    {
+      "path": "ds\\img\\598.png",
+      "label": 1,
+      "image_score": 0.7565907835960388,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2590
+    },
+    {
+      "path": "ds\\img\\599.png",
+      "label": 1,
+      "image_score": 0.7491618394851685,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3690
+    },
+    {
+      "path": "ds\\img\\6.png",
+      "label": 1,
+      "image_score": 0.6144603490829468,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 20355
+    },
+    {
+      "path": "ds\\img\\60.png",
+      "label": 1,
+      "image_score": 0.6837013363838196,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2734
+    },
+    {
+      "path": "ds\\img\\600.png",
+      "label": 1,
+      "image_score": 0.7822449803352356,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8216
+    },
+    {
+      "path": "ds\\img\\601.png",
+      "label": 1,
+      "image_score": 0.7444413900375366,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5975
+    },
+    {
+      "path": "ds\\img\\602.png",
+      "label": 1,
+      "image_score": 0.7081478834152222,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6334
+    },
+    {
+      "path": "ds\\img\\603.png",
+      "label": 1,
+      "image_score": 0.8205190896987915,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7524
+    },
+    {
+      "path": "ds\\img\\604.png",
+      "label": 1,
+      "image_score": 0.8177738189697266,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6577
+    },
+    {
+      "path": "ds\\img\\605.png",
+      "label": 1,
+      "image_score": 0.7429966926574707,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2823
+    },
+    {
+      "path": "ds\\img\\606.png",
+      "label": 1,
+      "image_score": 0.8012049198150635,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3496
+    },
+    {
+      "path": "ds\\img\\607.png",
+      "label": 1,
+      "image_score": 0.8543997406959534,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1955
+    },
+    {
+      "path": "ds\\img\\608.png",
+      "label": 1,
+      "image_score": 0.7531598210334778,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2792
+    },
+    {
+      "path": "ds\\img\\609.png",
+      "label": 1,
+      "image_score": 0.5567970275878906,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4095
+    },
+    {
+      "path": "ds\\img\\61.png",
+      "label": 1,
+      "image_score": 0.8575827479362488,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2189
+    },
+    {
+      "path": "ds\\img\\610.png",
+      "label": 1,
+      "image_score": 0.8083063364028931,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4264
+    },
+    {
+      "path": "ds\\img\\611.png",
+      "label": 1,
+      "image_score": 0.7270674109458923,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3978
+    },
+    {
+      "path": "ds\\img\\612.png",
+      "label": 1,
+      "image_score": 0.5601393580436707,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2136
+    },
+    {
+      "path": "ds\\img\\62.png",
+      "label": 1,
+      "image_score": 0.8862592577934265,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1391
+    },
+    {
+      "path": "ds\\img\\63.png",
+      "label": 1,
+      "image_score": 0.8193565607070923,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1497
+    },
+    {
+      "path": "ds\\img\\64.png",
+      "label": 1,
+      "image_score": 0.7844399809837341,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1261
+    },
+    {
+      "path": "ds\\img\\65.png",
+      "label": 1,
+      "image_score": 0.7559372186660767,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1368
+    },
+    {
+      "path": "ds\\img\\66.png",
+      "label": 1,
+      "image_score": 0.7433697581291199,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1601
+    },
+    {
+      "path": "ds\\img\\67.png",
+      "label": 1,
+      "image_score": 0.8166928887367249,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1715
+    },
+    {
+      "path": "ds\\img\\68.png",
+      "label": 1,
+      "image_score": 0.7312251925468445,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6589
+    },
+    {
+      "path": "ds\\img\\69.png",
+      "label": 1,
+      "image_score": 0.7632598876953125,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1357
+    },
+    {
+      "path": "ds\\img\\7.png",
+      "label": 1,
+      "image_score": 0.6254241466522217,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 23387
+    },
+    {
+      "path": "ds\\img\\70.png",
+      "label": 1,
+      "image_score": 0.8654964566230774,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3049
+    },
+    {
+      "path": "ds\\img\\71.png",
+      "label": 1,
+      "image_score": 0.7893758416175842,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 873
+    },
+    {
+      "path": "ds\\img\\72.png",
+      "label": 1,
+      "image_score": 0.6472939252853394,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2864
+    },
+    {
+      "path": "ds\\img\\73.png",
+      "label": 1,
+      "image_score": 0.7461180090904236,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3117
+    },
+    {
+      "path": "ds\\img\\74.png",
+      "label": 1,
+      "image_score": 0.5916265845298767,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2744
+    },
+    {
+      "path": "ds\\img\\75.png",
+      "label": 1,
+      "image_score": 0.7765940427780151,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2717
+    },
+    {
+      "path": "ds\\img\\76.png",
+      "label": 1,
+      "image_score": 0.6378945708274841,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1910
+    },
+    {
+      "path": "ds\\img\\77.png",
+      "label": 1,
+      "image_score": 0.6796137690544128,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2146
+    },
+    {
+      "path": "ds\\img\\78.png",
+      "label": 1,
+      "image_score": 0.7800144553184509,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1945
+    },
+    {
+      "path": "ds\\img\\79.png",
+      "label": 1,
+      "image_score": 0.5777640342712402,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 2031
+    },
+    {
+      "path": "ds\\img\\8.png",
+      "label": 1,
+      "image_score": 0.5071224570274353,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 24805
+    },
+    {
+      "path": "ds\\img\\80.png",
+      "label": 1,
+      "image_score": 0.6262445449829102,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 1290
+    },
+    {
+      "path": "ds\\img\\81.png",
+      "label": 1,
+      "image_score": 0.6761989593505859,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7399
+    },
+    {
+      "path": "ds\\img\\82.png",
+      "label": 1,
+      "image_score": 0.6196665167808533,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3625
+    },
+    {
+      "path": "ds\\img\\83.png",
+      "label": 1,
+      "image_score": 0.7568742632865906,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 8063
+    },
+    {
+      "path": "ds\\img\\84.png",
+      "label": 1,
+      "image_score": 0.7351108193397522,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5250
+    },
+    {
+      "path": "ds\\img\\85.png",
+      "label": 1,
+      "image_score": 0.7308276891708374,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5832
+    },
+    {
+      "path": "ds\\img\\86.png",
+      "label": 1,
+      "image_score": 0.7611855864524841,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6107
+    },
+    {
+      "path": "ds\\img\\87.png",
+      "label": 1,
+      "image_score": 0.8104503750801086,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 6394
+    },
+    {
+      "path": "ds\\img\\88.png",
+      "label": 1,
+      "image_score": 0.56344074010849,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4515
+    },
+    {
+      "path": "ds\\img\\89.png",
+      "label": 1,
+      "image_score": 0.5916905999183655,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4856
+    },
+    {
+      "path": "ds\\img\\9.png",
+      "label": 1,
+      "image_score": 0.6186758875846863,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 14241
+    },
+    {
+      "path": "ds\\img\\90.png",
+      "label": 1,
+      "image_score": 0.7071917653083801,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 5098
+    },
+    {
+      "path": "ds\\img\\91.png",
+      "label": 1,
+      "image_score": 0.669335663318634,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4748
+    },
+    {
+      "path": "ds\\img\\92.png",
+      "label": 1,
+      "image_score": 0.6891803741455078,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3957
+    },
+    {
+      "path": "ds\\img\\93.png",
+      "label": 1,
+      "image_score": 0.553412675857544,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3912
+    },
+    {
+      "path": "ds\\img\\94.png",
+      "label": 1,
+      "image_score": 0.6714034080505371,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4437
+    },
+    {
+      "path": "ds\\img\\95.png",
+      "label": 1,
+      "image_score": 0.6908095479011536,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4552
+    },
+    {
+      "path": "ds\\img\\96.png",
+      "label": 1,
+      "image_score": 0.7227573394775391,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 4236
+    },
+    {
+      "path": "ds\\img\\97.png",
+      "label": 1,
+      "image_score": 0.7577479481697083,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 3380
+    },
+    {
+      "path": "ds\\img\\98.png",
+      "label": 1,
+      "image_score": 0.6419622302055359,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 9920
+    },
+    {
+      "path": "ds\\img\\99.png",
+      "label": 1,
+      "image_score": 0.7075068950653076,
+      "image_height": 288,
+      "image_width": 384,
+      "annotated_pixels": 7304
+    }
+  ]
+}

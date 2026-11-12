@@ -1,357 +1,97 @@
 from pathlib import Path
-
 import gradio as gr
 import numpy as np
 import torch
-import torch.nn.functional as F
 from PIL import Image
 
 from models.anomaly_vfm_plus import AnomalyVFMPlus
+from models.xai.explainer import explain_prediction
 from inference.threshold import load_threshold
 
 
-# ============================================================
-# CONFIG
-# ============================================================
-
-CHECKPOINT_PATH = Path(
-    "experiments/plus/checkpoint.pt"
-)
-
-DEVICE = torch.device(
-    "cuda" if torch.cuda.is_available() else "cpu"
-)
-
-
-# ============================================================
-# LOAD MODEL ONCE
-# ============================================================
-
-print("=" * 60)
-print("AnomalyVFM+ DEMO")
-print("=" * 60)
-
-print(
-    f"Device: {DEVICE}"
-)
-
-print(
-    "Loading model..."
-)
+CHECKPOINT_PATH = Path("experiments/plus/checkpoint.pt")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = AnomalyVFMPlus()
-
-checkpoint = torch.load(
-    CHECKPOINT_PATH,
-    map_location=DEVICE
-)
-
-if "model_state_dict" in checkpoint:
-
-    state_dict = checkpoint[
-        "model_state_dict"
-    ]
-
-elif "state_dict" in checkpoint:
-
-    state_dict = checkpoint[
-        "state_dict"
-    ]
-
-else:
-
-    raise KeyError(
-        "No compatible model state found. "
-        f"Checkpoint keys: {list(checkpoint.keys())}"
-    )
-
-load_result = model.load_state_dict(
-    state_dict,
-    strict=False
-)
-
-print(
-    "Missing keys:",
-    len(load_result.missing_keys)
-)
-
-print(
-    "Unexpected keys:",
-    len(load_result.unexpected_keys)
-)
-
+checkpoint = torch.load(CHECKPOINT_PATH, map_location=DEVICE, weights_only=False)
+state_dict = checkpoint.get("model_state_dict") or checkpoint.get("state_dict")
+model.load_state_dict(state_dict, strict=False)
 model = model.to(DEVICE)
 model.eval()
 
 THRESHOLD = load_threshold()
 
-print(
-    f"Calibrated threshold: {THRESHOLD:.6f}"
-)
-
-print(
-    "Model loaded successfully."
-)
-
-print("=" * 60)
-
-
-# ============================================================
-# INFERENCE
-# ============================================================
 
 def predict(image):
-
     if image is None:
-
-        return (
-            "Please upload an image.",
-            None,
-            None,
-            "No image provided."
-        )
-
-    # --------------------------------------------------------
-    # Convert image
-    # --------------------------------------------------------
+        return "Please upload an image.", "", None, None, None
 
     if isinstance(image, np.ndarray):
-
-        image = Image.fromarray(
-            image.astype(np.uint8)
-        )
-
-    image = image.convert(
-        "RGB"
-    )
-
-    # --------------------------------------------------------
-    # Model inference
-    # --------------------------------------------------------
+        image = Image.fromarray(image.astype(np.uint8))
+    image = image.convert("RGB")
 
     with torch.no_grad():
+        anomaly_map, image_logit = model.forward_with_score([image])
+        score = torch.sigmoid(image_logit).reshape(-1)[0].item()
 
-        anomaly_map, image_logit = (
-            model.forward_with_score(
-                [image]
-            )
-        )
-
-        score = torch.sigmoid(
-            image_logit
-        ).item()
-
-        probability_map = torch.sigmoid(
-            anomaly_map
-        )
-
-        # ----------------------------------------------------
-        # Resize anomaly map to original image size
-        # ----------------------------------------------------
-
-        probability_map = F.interpolate(
-            probability_map,
-            size=image.size[::-1],
-            mode="bilinear",
-            align_corners=False
-        )
-
-        heatmap = (
-            probability_map[
-                0,
-                0
-            ]
-            .cpu()
-            .numpy()
-        )
-
-    # --------------------------------------------------------
-    # Decision
-    # --------------------------------------------------------
-
-    if score >= THRESHOLD:
-
-        prediction = "ANOMALOUS"
-
-        reason = (
-            "Image-level anomaly score exceeded "
-            "the calibrated threshold."
-        )
-
-    else:
-
-        prediction = "NORMAL"
-
-        reason = (
-            "Anomaly score is below the calibrated "
-            "threshold."
-        )
-
-    # --------------------------------------------------------
-    # Create heatmap
-    # --------------------------------------------------------
-
-    heatmap_uint8 = (
-        heatmap * 255
-    ).clip(
-        0,
-        255
-    ).astype(
-        np.uint8
+    xai_data = explain_prediction(
+        model=model,
+        pil_image=image,
+        anomaly_map=anomaly_map,
+        image_score=score,
+        threshold=THRESHOLD,
     )
+    xai = xai_data["xai_report"]
+    attr = xai["layer_attribution"]
 
-    # Use matplotlib colormap without creating
-    # another dependency on the model pipeline.
-    import matplotlib
-
-    colored_heatmap = (
-        matplotlib.colormaps["jet"](
-            heatmap
-        )[
-            :, :, :3
-        ]
-        * 255
-    ).astype(
-        np.uint8
-    )
-
-    heatmap_image = Image.fromarray(
-        colored_heatmap
-    )
-
-    # --------------------------------------------------------
-    # Overlay
-    # --------------------------------------------------------
-
-    overlay = Image.blend(
-        image,
-        heatmap_image.resize(
-            image.size
-        ),
-        alpha=0.45
-    )
-
-    # --------------------------------------------------------
-    # Result text
-    # --------------------------------------------------------
-
+    prediction = "ANOMALOUS" if score >= THRESHOLD else "NORMAL"
     result_text = (
         f"## {prediction}\n\n"
-        f"**Anomaly Score:** `{score:.6f}`\n\n"
-        f"**Threshold:** `{THRESHOLD:.6f}`\n\n"
-        f"**Decision:** {reason}"
+        f"**Anomaly Score:** `{score:.6f}` | **Threshold:** `{THRESHOLD:.6f}`\n\n"
+        f"### Explainable AI (XAI) Summary\n"
+        f"{xai['summary']}"
     )
 
-    technical_info = (
-        f"Model: AnomalyVFM+\n"
-        f"Foundation model: DINOv2\n"
-        f"Adapter: LoRA\n"
-        f"Feature fusion: Multi-scale\n"
-        f"Scoring: Image predictor\n"
-        f"Device: {DEVICE}"
+    xai_metrics = (
+        f"Primary Location   : {xai['location']}\n"
+        f"Morphological Type : {xai['pattern_type']}\n"
+        f"Affected Area      : {xai['affected_area_percent']}% ({xai['region_count']} region(s))\n"
+        f"Peak Confidence    : {xai['peak_confidence_percent']}% (ROI Mean: {xai['mean_roi_confidence_percent']}%)\n"
+        f"Texture Attribution: {attr['shallow_texture_percent']}% (DINOv2 Layers 3–6)\n"
+        f"Structure Attribution: {attr['deep_structure_percent']}% (DINOv2 Layers 9–12)"
     )
 
     return (
         result_text,
-        heatmap_image,
-        overlay,
-        technical_info
+        xai_metrics,
+        xai_data["heatmap_image"],
+        xai_data["overlay_image"],
+        xai_data["xai_annotated_image"],
     )
 
 
-# ============================================================
-# GRADIO INTERFACE
-# ============================================================
-
-with gr.Blocks(
-    title="AnomalyVFM+"
-) as demo:
-
-    gr.Markdown(
-        """
-        # 🔍 AnomalyVFM+
-
-        ### Zero-Shot Visual Anomaly Detection
-
-        Upload an image to detect whether it contains
-        an anomaly using a Vision Foundation Model.
-        """
-    )
-
-    gr.Markdown(
-        """
-        **Pipeline:** DINOv2 → LoRA → Multi-scale Feature Fusion
-        → Anomaly Decoder + Image Predictor
-        """
-    )
+with gr.Blocks(title="AnomalyVFM+ XAI Demo") as demo:
+    gr.Markdown("# AnomalyVFM+ — Explainable Zero-Shot Anomaly Detection")
 
     with gr.Row():
-
         with gr.Column():
-
-            input_image = gr.Image(
-                type="pil",
-                label="Upload Product Image"
-            )
-
-            detect_button = gr.Button(
-                "🔍 Detect Anomaly",
-                variant="primary"
-            )
-
+            input_image = gr.Image(type="pil", label="Upload Image")
+            detect_button = gr.Button("Detect & Explain Anomaly", variant="primary")
         with gr.Column():
-
-            result = gr.Markdown(
-                value="Upload an image and click **Detect Anomaly**."
-            )
-
-            technical_info = gr.Textbox(
-                label="Technical Information",
-                lines=6,
-                interactive=False
-            )
+            result = gr.Markdown("Upload an image and click **Detect & Explain Anomaly**.")
+            xai_box = gr.Textbox(label="XAI Diagnostic Metrics", lines=7, interactive=False)
 
     with gr.Row():
-
-        heatmap_output = gr.Image(
-            label="Anomaly Heatmap"
-        )
-
-        overlay_output = gr.Image(
-            label="Anomaly Overlay"
-        )
-
-    gr.Markdown(
-        """
-        ---
-        
-        ### How it works
-
-        1. The uploaded image is processed by **DINOv2**.
-        2. **LoRA adaptation** extracts task-specific features.
-        3. Features from multiple transformer layers are fused.
-        4. The anomaly decoder produces a spatial anomaly map.
-        5. The image predictor produces the final anomaly score.
-        6. A calibrated threshold determines **NORMAL** or **ANOMALOUS**.
-        """
-    )
+        heatmap_output = gr.Image(label="1. Raw Anomaly Heatmap")
+        overlay_output = gr.Image(label="2. Blended Overlay")
+        xai_output = gr.Image(label="3. XAI Contour & Bounding Box")
 
     detect_button.click(
         fn=predict,
         inputs=input_image,
-        outputs=[
-            result,
-            heatmap_output,
-            overlay_output,
-            technical_info
-        ]
+        outputs=[result, xai_box, heatmap_output, overlay_output, xai_output],
     )
 
 
-# ============================================================
-# LAUNCH
-# ============================================================
-
 if __name__ == "__main__":
-
     demo.launch()

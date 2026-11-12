@@ -1,0 +1,1237 @@
+{
+  "dataset": "Brain MRI",
+  "checkpoint": "experiments\\plus\\checkpoint_medical.pt",
+  "evaluation_type": "cross-domain image-level anomaly evaluation",
+  "device": "cpu",
+  "num_images": 200,
+  "normal_count": 50,
+  "abnormal_count": 150,
+  "class_distribution": {
+    "normal": 50,
+    "abnormal": 150
+  },
+  "category_distribution": {
+    "glioma": 50,
+    "meningioma": 50,
+    "notumor": 50,
+    "pituitary": 50
+  },
+  "image_auroc": 0.7260000000000001,
+  "classification_threshold": 0.5,
+  "accuracy_at_threshold": 0.67,
+  "confusion_matrix": {
+    "true_negative": 26,
+    "false_positive": 24,
+    "false_negative": 42,
+    "true_positive": 108
+  },
+  "one_vs_rest_category_auroc": {
+    "glioma": 0.522,
+    "meningioma": 0.8014666666666667,
+    "notumor": 0.27399999999999997,
+    "pituitary": 0.4025333333333333
+  },
+  "warning": "The checkpoint was trained on MVTec Bottle. These results measure cross-domain generalization, not medical diagnostic performance. The classification threshold is not clinically validated. Category-wise AUROC measures each category against all other evaluated categories; it does not establish tumor-type diagnostic capability.",
+  "samples": [
+    {
+      "path": "Testing\\glioma\\Te-gl_0010.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.5578083992004395
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0011.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.17197319865226746
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0012.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.4469850957393646
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0013.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.1494496911764145
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0014.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7792325019836426
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0015.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7945075035095215
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0016.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.2908025085926056
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0017.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.17002145946025848
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0018.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7612876296043396
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0019.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8620936870574951
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0020.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.25079309940338135
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0021.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.18054693937301636
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0022.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7746487855911255
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0023.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.799554169178009
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0024.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.21795552968978882
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0025.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8249856233596802
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0026.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7906956672668457
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0027.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8596545457839966
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0028.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8137208223342896
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0029.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.21795552968978882
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0030.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7774200439453125
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0031.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.6921402215957642
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0032.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7247101664543152
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0033.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7657070159912109
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0034.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8045692443847656
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0035.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7949274778366089
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0036.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8434687256813049
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0037.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7643341422080994
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0038.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.30142009258270264
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0039.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.3033689856529236
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0040.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7822306156158447
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0041.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7750988602638245
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0042.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7862069606781006
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0043.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.678375780582428
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0044.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.3518155813217163
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0045.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7083654999732971
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0046.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.398973286151886
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0047.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.3643852770328522
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0048.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7476260662078857
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0049.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.22611182928085327
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0050.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.5633062720298767
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0051.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.2783069312572479
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0052.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.7986066937446594
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0053.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.29246219992637634
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0054.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8306586146354675
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0055.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.8306407928466797
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0056.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.42200854420661926
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0057.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.35555243492126465
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0058.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.629017174243927
+    },
+    {
+      "path": "Testing\\glioma\\Te-gl_0059.jpg",
+      "category": "glioma",
+      "label": 1,
+      "score": 0.5711577534675598
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0010.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8103687763214111
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0011.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.850063681602478
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0012.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7384254336357117
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0013.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8308796882629395
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0014.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.691737711429596
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0015.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7114998698234558
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0016.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6898159384727478
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0017.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.75098717212677
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0018.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7538923621177673
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0019.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7336422801017761
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0020.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7444801330566406
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0021.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7254321575164795
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0022.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6468482613563538
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0023.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.847247302532196
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0024.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7359606027603149
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0025.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7458711266517639
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0026.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8502150774002075
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0027.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7354708313941956
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0028.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6243959069252014
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0029.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7433104515075684
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0030.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6651175022125244
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0031.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8103687763214111
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0032.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.45310139656066895
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0033.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.9041497111320496
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0034.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8728176951408386
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0035.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8147615194320679
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0036.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8061110973358154
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0037.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7794910669326782
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0038.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8614653944969177
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0039.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6646873354911804
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0040.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7646859288215637
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0041.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6821467280387878
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0042.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7779543399810791
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0043.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7110215425491333
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0044.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.855025589466095
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0045.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7173213958740234
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0046.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.3611828684806824
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0047.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7500158548355103
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0048.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8604099154472351
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0049.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8413323760032654
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0050.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7814948558807373
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0051.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8649498224258423
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0052.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.8433844447135925
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0053.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7333871126174927
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0054.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.78153395652771
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0055.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.6971539258956909
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0056.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7843925952911377
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0057.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.5998750329017639
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0058.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.7304538488388062
+    },
+    {
+      "path": "Testing\\meningioma\\Te-me_0059.jpg",
+      "category": "meningioma",
+      "label": 1,
+      "score": 0.721342921257019
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0010.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.708978533744812
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0011.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.14659260213375092
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0012.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.30435144901275635
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0013.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.6636437177658081
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0014.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.4682908356189728
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0015.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5730934143066406
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0016.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.10494304448366165
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0017.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.4998941719532013
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0018.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.32085373997688293
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0019.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.49605855345726013
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0020.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.8156813383102417
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0021.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.27284225821495056
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0022.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5034477114677429
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0023.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.40050816535949707
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0024.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.6151456236839294
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0025.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5169588923454285
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0026.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5718133449554443
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0027.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.7050371766090393
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0028.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.8086501955986023
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0029.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.17660227417945862
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0030.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.39767947793006897
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0031.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.38303545117378235
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0032.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5274008512496948
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0033.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.7720180153846741
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0034.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5491065382957458
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0035.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.6735718846321106
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0036.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.636818528175354
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0037.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5199840664863586
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0038.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.6803346872329712
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0039.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5940992832183838
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0040.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.2377803474664688
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0041.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.12601801753044128
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0042.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.41874420642852783
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0043.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.49905431270599365
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0044.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.30435144901275635
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0045.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5507239103317261
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0046.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5836106538772583
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0047.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.12214644253253937
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0048.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.14659260213375092
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0049.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.3027676045894623
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0050.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5507239103317261
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0051.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.3715327978134155
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0052.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.2377803474664688
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0053.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.14659260213375092
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0054.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.5507239103317261
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0055.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.30435144901275635
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0056.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.1454726606607437
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0057.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.6087765097618103
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0058.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.7079935669898987
+    },
+    {
+      "path": "Testing\\notumor\\Te-no_0059.jpg",
+      "category": "notumor",
+      "label": 0,
+      "score": 0.4419598877429962
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0010.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.3359209895133972
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0011.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.39102107286453247
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0012.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.23749826848506927
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0013.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.3838983178138733
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0014.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5451611876487732
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0015.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5070546269416809
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0016.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.46480792760849
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0017.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6876614689826965
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0018.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.24960805475711823
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0019.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.2113439440727234
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0020.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.41540244221687317
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0021.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5026066899299622
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0022.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6907690763473511
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0023.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.28001290559768677
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0024.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6348992586135864
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0025.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8434602618217468
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0026.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8223798274993896
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0027.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8420813679695129
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0028.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.611544668674469
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0029.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5225124955177307
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0030.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6176138520240784
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0031.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.589346170425415
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0032.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.25905436277389526
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0033.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5806309580802917
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0034.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.31872305274009705
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0035.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.2226971983909607
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0036.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6632149815559387
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0037.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5838000774383545
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0038.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.7640329599380493
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0039.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.4291180968284607
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0040.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.3416752219200134
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0041.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.7838708758354187
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0042.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.7507644295692444
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0043.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.4102494418621063
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0044.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.24907343089580536
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0045.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.3765990436077118
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0046.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5422142744064331
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0047.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8147744536399841
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0048.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.40284600853919983
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0049.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.43306878209114075
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0050.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5167971253395081
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0051.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.6378893852233887
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0052.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8562849164009094
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0053.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.3563344180583954
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0054.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8126620650291443
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0055.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.7156472206115723
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0056.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.34356725215911865
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0057.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5298898220062256
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0058.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.8469152450561523
+    },
+    {
+      "path": "Testing\\pituitary\\Te-pi_0059.jpg",
+      "category": "pituitary",
+      "label": 1,
+      "score": 0.5128577351570129
+    }
+  ]
+}

@@ -3,269 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AnomalyVFM+</title>
-
+    <title>AnomalyVFM+ | Explainable Visual Anomaly Detection</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f7f7f7; color: #111; min-height: 100vh; }
+        header { background: #111; color: white; padding: 22px 8%; }
+        header h1 { font-size: 28px; }
+        header p { margin-top: 6px; color: #bbb; }
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .upload-area { border: 2px dashed #bbb; border-radius: 14px; padding: 45px 20px; text-align: center; cursor: pointer; transition: 0.2s; display: block; }
+        .upload-area:hover { border-color: #111; background: #fafafa; }
+        .upload-area h2 { margin-bottom: 10px; }
+        .upload-area p { color: #666; }
+        input[type="file"] { display: none; }
+        button { margin-top: 20px; width: 100%; padding: 14px; border: none; border-radius: 10px; background: #111; color: white; font-size: 16px; cursor: pointer; }
+        button:hover { background: #333; }
+        button:disabled { background: #999; cursor: not-allowed; }
+        #preview { display: none; max-width: 100%; max-height: 320px; margin: 25px auto 0; border-radius: 12px; }
+        #loading { display: none; text-align: center; margin-top: 25px; color: #555; font-weight: bold; }
+        #result { display: none; margin-top: 35px; }
+        .prediction { text-align: center; padding: 24px; border-radius: 12px; background: #f2f2f2; }
+        .prediction h2 { font-size: 30px; margin-bottom: 8px; }
+        .score { font-size: 18px; color: #555; }
+        .details { margin-top: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .detail-box { padding: 16px; background: #f5f5f5; border-radius: 10px; }
+        .detail-box strong { display: block; margin-bottom: 5px; font-size: 13px; color: #555; text-transform: uppercase; }
+        .xai-section { margin-top: 28px; padding: 24px; border-radius: 14px; background: #f8fafc; border: 1px solid #e2e8f0; }
+        .xai-section h3 { font-size: 20px; margin-bottom: 12px; color: #0f172a; }
+        .xai-summary { font-size: 15px; line-height: 1.6; color: #1e293b; background: white; padding: 16px; border-radius: 10px; border-left: 4px solid #0284c7; margin-bottom: 18px; }
+        .xai-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+        .xai-metric { background: white; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0; }
+        .xai-metric span { display: block; font-size: 12px; color: #64748b; margin-bottom: 4px; }
+        .xai-metric strong { font-size: 15px; color: #0f172a; }
+        .attr-bar-wrap { background: white; padding: 16px; border-radius: 10px; border: 1px solid #e2e8f0; }
+        .attr-labels { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+        .attr-bar { height: 12px; border-radius: 6px; background: #e2e8f0; overflow: hidden; display: flex; }
+        .attr-texture { background: #0284c7; height: 100%; }
+        .attr-structure { background: #7c3aed; height: 100%; }
+        .visuals { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .visual-box h3 { margin-bottom: 8px; font-size: 15px; }
+        .visual-box p { font-size: 12px; color: #666; margin-bottom: 8px; }
+        .visual-box img { width: 100%; border-radius: 12px; border: 1px solid #ddd; }
+        @media (max-width: 850px) {
+            .xai-grid { grid-template-columns: repeat(2, 1fr); }
+            .visuals { grid-template-columns: 1fr; }
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #111;
-            min-height: 100vh;
-        }
-
-        header {
-            background: #111;
-            color: white;
-            padding: 22px 8%;
-        }
-
-        header h1 {
-            font-size: 28px;
-        }
-
-        header p {
-            margin-top: 6px;
-            color: #bbb;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        }
-
-        .upload-area {
-            border: 2px dashed #bbb;
-            border-radius: 14px;
-            padding: 50px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .upload-area:hover {
-            border-color: #111;
-            background: #fafafa;
-        }
-
-        .upload-area h2 {
-            margin-bottom: 10px;
-        }
-
-        .upload-area p {
-            color: #666;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        button {
-            margin-top: 20px;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: #111;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #333;
-        }
-
-        button:disabled {
-            background: #999;
-            cursor: not-allowed;
-        }
-
-        #preview {
-            display: none;
-            max-width: 100%;
-            max-height: 350px;
-            margin: 25px auto 0;
-            border-radius: 12px;
-        }
-
-        #loading {
-            display: none;
-            text-align: center;
-            margin-top: 25px;
-            color: #555;
-        }
-
-        #result {
-            display: none;
-            margin-top: 35px;
-        }
-
-        .prediction {
-            text-align: center;
-            padding: 25px;
-            border-radius: 12px;
-            background: #f2f2f2;
-        }
-
-        .prediction h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .score {
-            font-size: 18px;
-            color: #555;
-        }
-
-        .details {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .detail-box {
-            padding: 18px;
-            background: #f5f5f5;
-            border-radius: 10px;
-        }
-
-        .detail-box strong {
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .visuals {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .visual-box h3 {
-            margin-bottom: 10px;
-        }
-
-        .visual-box img {
-            width: 100%;
-            border-radius: 12px;
-        }
-
-        .reason {
-            margin-top: 20px;
-            padding: 18px;
-            background: #f5f5f5;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 700px) {
-            .details,
-            .visuals {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .details, .xai-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <h1>AnomalyVFM+</h1>
-    <p>Zero-Shot Visual Anomaly Detection using Vision Foundation Models</p>
+    <p>Zero-Shot Visual Anomaly Detection with Explainable AI (XAI) Attribution</p>
 </header>
 
 <main>
-
     <div class="card">
-
         <label class="upload-area" for="imageInput">
             <h2>Upload an Image</h2>
-            <p>Click here to select an image for anomaly detection</p>
+            <p>Select an industrial or medical image for anomaly detection & heatmap explanation</p>
         </label>
 
-        <input
-            id="imageInput"
-            type="file"
-            accept="image/*"
-        >
-
+        <input id="imageInput" type="file" accept="image/*">
         <img id="preview" alt="Image preview">
 
-        <button id="predictButton" disabled>
-            Detect Anomaly
-        </button>
-
-        <div id="loading">
-            Running AnomalyVFM+ inference...
-        </div>
+        <button id="predictButton" disabled>Detect & Explain Anomaly</button>
+        <div id="loading">Running AnomalyVFM+ & XAI Attribution...</div>
 
         <div id="result">
-
             <div class="prediction">
                 <h2 id="predictionText">---</h2>
-
                 <div class="score">
-                    Anomaly Score:
-                    <strong id="scoreText">---</strong>
+                    Anomaly Score: <strong id="scoreText">---</strong>
                 </div>
             </div>
 
             <div class="details">
-
                 <div class="detail-box">
                     <strong>Decision Threshold</strong>
                     <span id="thresholdText">---</span>
                 </div>
-
                 <div class="detail-box">
-                    <strong>Model</strong>
+                    <strong>Architecture</strong>
                     <span>DINOv2 + LoRA + Multi-scale Fusion</span>
                 </div>
-
             </div>
 
-            <div class="reason">
-                <strong>Analysis</strong>
-                <p id="reasonText">---</p>
+            <div class="xai-section">
+                <h3>Explainable AI (XAI) Heatmap Analysis</h3>
+                <div class="xai-summary" id="xaiSummaryText">---</div>
+
+                <div class="xai-grid">
+                    <div class="xai-metric">
+                        <span>Primary Hotspot Location</span>
+                        <strong id="xaiLocation">---</strong>
+                    </div>
+                    <div class="xai-metric">
+                        <span>Affected Foreground Area</span>
+                        <strong id="xaiArea">---</strong>
+                    </div>
+                    <div class="xai-metric">
+                        <span>Peak Spatial Confidence</span>
+                        <strong id="xaiPeak">---</strong>
+                    </div>
+                    <div class="xai-metric">
+                        <span>Morphological Pattern</span>
+                        <strong id="xaiPattern">---</strong>
+                    </div>
+                </div>
+
+                <div class="attr-bar-wrap">
+                    <div class="attr-labels">
+                        <span style="color:#0284c7;" id="textureLabel">Texture & Edge Cues (Layers 3–6): --%</span>
+                        <span style="color:#7c3aed;" id="structureLabel">Structural Cues (Layers 9–12): --%</span>
+                    </div>
+                    <div class="attr-bar">
+                        <div class="attr-texture" id="textureBar" style="width: 50%;"></div>
+                        <div class="attr-structure" id="structureBar" style="width: 50%;"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="visuals">
-
                 <div class="visual-box">
-                    <h3>Original / Heatmap</h3>
+                    <h3>1. Spatial Activation Heatmap</h3>
+                    <p>Raw decoder pixel-level anomaly probability</p>
                     <img id="heatmapImage" alt="Anomaly heatmap">
                 </div>
-
                 <div class="visual-box">
-                    <h3>Anomaly Overlay</h3>
+                    <h3>2. Blended Overlay</h3>
+                    <p>Heatmap fused onto input tissue/surface</p>
                     <img id="overlayImage" alt="Anomaly overlay">
                 </div>
-
+                <div class="visual-box">
+                    <h3>3. XAI Contour & ROI Localization</h3>
+                    <p>Cyan contour & bounding box on peak region</p>
+                    <img id="xaiOverlayImage" alt="XAI annotated overlay">
+                </div>
             </div>
-
         </div>
-
     </div>
-
 </main>
 
 <script>
-
 const imageInput = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const predictButton = document.getElementById("predictButton");
@@ -275,87 +159,69 @@ const result = document.getElementById("result");
 let selectedFile = null;
 
 imageInput.addEventListener("change", () => {
-
     selectedFile = imageInput.files[0];
-
     if (!selectedFile) {
         predictButton.disabled = true;
         return;
     }
-
     preview.src = URL.createObjectURL(selectedFile);
     preview.style.display = "block";
-
     predictButton.disabled = false;
-
     result.style.display = "none";
 });
 
-
 predictButton.addEventListener("click", async () => {
-
-    if (!selectedFile) {
-        return;
-    }
+    if (!selectedFile) return;
 
     predictButton.disabled = true;
     loading.style.display = "block";
     result.style.display = "none";
 
     const formData = new FormData();
-
     formData.append("file", selectedFile);
 
     try {
-
         const response = await fetch("/api/predict", {
             method: "POST",
             body: formData
         });
-
-        if (!response.ok) {
-            throw new Error("Prediction request failed.");
-        }
+        if (!response.ok) throw new Error("Prediction request failed.");
 
         const data = await response.json();
 
-        document.getElementById("predictionText").textContent =
-            data.prediction;
+        document.getElementById("predictionText").textContent = data.prediction;
+        document.getElementById("scoreText").textContent = Number(data.anomaly_score).toFixed(6);
+        document.getElementById("thresholdText").textContent = Number(data.threshold).toFixed(6);
 
-        document.getElementById("scoreText").textContent =
-            Number(data.anomaly_score).toFixed(6);
+        if (data.xai_report) {
+            const xai = data.xai_report;
+            document.getElementById("xaiSummaryText").textContent = xai.summary;
+            document.getElementById("xaiLocation").textContent = xai.location;
+            document.getElementById("xaiArea").textContent = xai.affected_area_percent + "% (" + xai.region_count + " region)";
+            document.getElementById("xaiPeak").textContent = xai.peak_confidence_percent + "%";
+            document.getElementById("xaiPattern").textContent = xai.pattern_type;
 
-        document.getElementById("thresholdText").textContent =
-            Number(data.threshold).toFixed(6);
+            const tex = xai.layer_attribution.shallow_texture_percent;
+            const str = xai.layer_attribution.deep_structure_percent;
+            document.getElementById("textureLabel").textContent = `Texture & Edge Cues (Layers 3–6): ${tex}%`;
+            document.getElementById("structureLabel").textContent = `Structural Cues (Layers 9–12): ${str}%`;
+            document.getElementById("textureBar").style.width = `${tex}%`;
+            document.getElementById("structureBar").style.width = `${str}%`;
+        }
 
-        document.getElementById("reasonText").textContent =
-            data.reason;
-
-        document.getElementById("heatmapImage").src =
-            "data:image/png;base64," + data.heatmap;
-
-        document.getElementById("overlayImage").src =
-            "data:image/png;base64," + data.overlay;
+        document.getElementById("heatmapImage").src = "data:image/png;base64," + data.heatmap;
+        document.getElementById("overlayImage").src = "data:image/png;base64," + data.overlay;
+        document.getElementById("xaiOverlayImage").src = "data:image/png;base64," + data.xai_overlay;
 
         result.style.display = "block";
-
     } catch (error) {
-
-        alert(
-            "Prediction failed. Please check whether the API is running."
-        );
-
+        alert("Prediction failed. Please check whether the API is running.");
         console.error(error);
-
     } finally {
-
         loading.style.display = "none";
         predictButton.disabled = false;
-
     }
-
 });
-
 </script>
 
 </body>

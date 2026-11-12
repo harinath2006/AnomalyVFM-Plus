@@ -7,14 +7,33 @@
         "anomalous_images": 63
     },
     "final_model": {
-        "name": "AnomalyVFM+",
-        "image_auroc": 0.9595,
-        "pixel_auroc": 0.8627
+        "name": "AnomalyVFM+ (Upgraded Decoder + ROI + LoRA r=8)",
+        "image_auroc": 0.9675,
+        "pixel_auroc": 0.6863,
+        "calibrated_threshold": 0.311792,
+        "held_out_accuracy": 1.0
     },
     "baseline": {
         "name": "DINOv2 Baseline",
         "image_auroc": 0.4683,
         "pixel_auroc": 0.8857
+    },
+    "cross_domain_medical": {
+        "cvc_clinicdb": {
+            "dataset": "CVC-ClinicDB (Endoscopy Polyp Segmentation)",
+            "images_evaluated": 612,
+            "previous_pixel_auroc": 0.6103,
+            "upgraded_pixel_auroc": 0.7383,
+            "absolute_gain": 0.128
+        },
+        "brain_mri": {
+            "dataset": "Brain MRI (Tumor Anomaly Detection)",
+            "images_evaluated": 200,
+            "zero_shot_bottle_auroc": 0.5965,
+            "previous_baseline_auroc": 0.7173,
+            "upgraded_few_shot_normal_auroc": 0.726,
+            "absolute_gain_vs_zero_shot": 0.1295
+        }
     },
     "ablations": {
         "single_scale_lora": {
@@ -24,11 +43,11 @@
         },
         "multi_scale": {
             "name": "Multi-scale Feature Fusion",
-            "image_auroc": 0.9595,
+            "image_auroc": 0.9675,
             "pixel_auroc": 0.8602,
-            "image_improvement": 0.7865,
+            "image_improvement": 0.7945,
             "pixel_improvement": 0.3087,
-            "image_relative_change_percent": 454.59,
+            "image_relative_change_percent": 459.25,
             "pixel_relative_change_percent": 55.98
         },
         "adaptive_scoring": {
@@ -46,10 +65,19 @@
             "relative_change_percent": -1.56
         }
     },
+    "explainable_ai": {
+        "module": "models/xai/explainer.py",
+        "features": [
+            "Multi-scale DINOv2 layer attribution (Layers 3-6 texture vs Layers 9-12 structure)",
+            "Foreground ROI spatial hotspot localization & quadrant mapping",
+            "Connected component region count & peak spatial confidence",
+            "Annotated cyan contour & bounding-box visual overlay"
+        ]
+    },
     "final_vs_baseline": {
-        "image_auroc_difference": 0.4912,
-        "pixel_auroc_difference": -0.023,
-        "image_relative_change_percent": 104.89,
-        "pixel_relative_change_percent": -2.6
+        "image_auroc_difference": 0.4992,
+        "pixel_auroc_difference": -0.1994,
+        "image_relative_change_percent": 106.6,
+        "pixel_relative_change_percent": -22.51
     }
 }

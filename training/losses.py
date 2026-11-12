@@ -2,53 +2,33 @@ import torch
 import torch.nn.functional as F
 
 
+def soft_dice_loss(logits, targets, eps=1e-6):
+    probs = torch.sigmoid(logits)
+    intersection = (probs * targets).sum(dim=(1, 2, 3))
+    union = probs.sum(dim=(1, 2, 3)) + targets.sum(dim=(1, 2, 3))
+    dice = (2.0 * intersection + eps) / (union + eps)
+    return (1.0 - dice).mean()
+
+
+def focal_loss(logits, targets, alpha=0.75, gamma=2.0):
+    bce = F.binary_cross_entropy_with_logits(logits, targets, reduction="none")
+    probs = torch.sigmoid(logits)
+    p_t = probs * targets + (1.0 - probs) * (1.0 - targets)
+    alpha_t = alpha * targets + (1.0 - alpha) * (1.0 - targets)
+    loss = alpha_t * ((1.0 - p_t) ** gamma) * bce
+    return loss.mean()
+
+
 def anomaly_loss(predictions, targets):
     """
-    Calculate pixel-level anomaly detection loss.
-
-    Args:
-        predictions:
-            Raw decoder output (logits), shape [B, 1, H, W]
-
-        targets:
-            Ground-truth anomaly mask, shape [B, 1, H, W]
-            Values should be 0 for normal and 1 for anomaly.
-
-    Returns:
-        Binary cross-entropy loss.
+    Combined Focal + Soft Dice loss for medical & industrial anomaly segmentation.
     """
-
     if predictions.shape[-2:] != targets.shape[-2:]:
         targets = F.interpolate(
             targets.float(),
             size=predictions.shape[-2:],
-            mode="nearest"
+            mode="bilinear",
+            align_corners=False,
         )
-
-    loss = F.binary_cross_entropy_with_logits(
-        predictions,
-        targets.float()
-    )
-
-    return loss
-
-
-if __name__ == "__main__":
-    print("=== Anomaly Loss Test ===")
-
-    # Simulated decoder output
-    predictions = torch.randn(2, 1, 16, 16)
-
-    # Simulated ground-truth masks
-    targets = torch.randint(
-        0,
-        2,
-        (2, 1, 16, 16)
-    ).float()
-
-    loss = anomaly_loss(predictions, targets)
-
-    print("Prediction shape:", predictions.shape)
-    print("Target shape:", targets.shape)
-    print("Loss:", loss.item())
-    print("Loss test: SUCCESS")
+    targets = targets.float()
+    return 2.0 * focal_loss(predictions, targets) + soft_dice_loss(predictions, targets)
